@@ -9,7 +9,7 @@ class Goals extends React.Component {
 
     fetchGoalData = () => {
         var encodedURI = window.encodeURI(this.props.uri);
-        return axios.get(encodeURI).then(response => {
+        return axios.get(encodedURI).then(response => {
             this.setState( () => {
                 return {
                     goalData: response.data

@@ -25,14 +25,14 @@ class Goals extends React.Component {
     render() {
         console.log(this.state.goalData);
         if (this.state.goalData.length === 0) {
-            return <div> Failed to fetch data from server</div>
+            return (<div> Failed to fetch data from server</div>);
         }
         const goals = this.state.goalData.map(goal => (
             <div key={goal.name}>
                 <em>{goal.name}</em>: {goal.numberOfGoals}
             </div>
         ));
-        return <div>{goals}</div>;
+        return (<div>{goals}</div>);
     }
 
 }

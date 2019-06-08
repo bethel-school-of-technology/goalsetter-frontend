@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Goals from './components/Goals';
-import Login from './pages/Login';
+//import Goals from './components/Goals';
+import Planets from './components/Planets';
 
 
 class App extends Component {
@@ -15,6 +15,8 @@ class App extends Component {
         </header> */}
         <Login />
         <Goals uri="http://localhost:3001/staticGoals" />
+        </header>
+        <Planets uri="http://localhost:3001/staticPlanets" />
       </div>
     );
   }

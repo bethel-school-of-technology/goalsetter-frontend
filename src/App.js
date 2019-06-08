@@ -4,6 +4,7 @@ import './App.css';
 import Goals from './components/Goals';
 import Planets from './components/Planets';
 import Login from './pages/Login';
+import Users from './components/Users';
 
 
 class App extends Component {
@@ -15,7 +16,7 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header> */}
         <Login />
-        <Goals uri="http://localhost:3001/staticGoals" />
+        <Users uri="http://localhost:3001/allusers" />
         <Planets uri="http://localhost:3001/staticPlanets" />
       </div>
     );

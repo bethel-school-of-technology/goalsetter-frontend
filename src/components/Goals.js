@@ -1,5 +1,4 @@
 import React from 'react';
-
 import axios from 'axios';
 
 class Goals extends React.Component {
@@ -8,10 +7,10 @@ class Goals extends React.Component {
     };
 
     fetchGoalData = () => {
-        var encodeURI = window.encodeURI(this.props.uri);
-        return axios.get(encodeURI).then(response => {
-            this.setState( () => {
-                return {
+        var encodedURI = window.encodeURI(this.props.uri);
+    return axios.get(encodedURI).then(response => {
+      this.setState(() => {
+        return {
                     goalData: response.data
                 };
             });

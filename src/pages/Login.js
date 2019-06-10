@@ -10,43 +10,10 @@ export default class Login extends Component {
   
   render () {                                   
       return (
-        <div>
-           <Container className="App">
-          <h2>Sign In | Sign Up</h2>
-        <Form id="signup" name="signup" method="POST" action="/">
-          <Col>
-            <FormGroup>
-              <Label>First Name:</Label>
-              <Input
-                type="text"
-                name="firstName"
-                id="firstName"
-                placeholder="First Name"
-              />
-            </FormGroup>
-          </Col>
-          <Col>
-            <FormGroup>
-              <Label>Last Name</Label>
-              <Input
-                type="text"
-                name="lastName"
-                id="lastName"
-                placeholder="Last Name"
-              />
-            </FormGroup>
-          </Col>
-          <Col>
-            <FormGroup>
-              <Label>Email</Label>
-              <Input
-                type="email"
-                name="email"
-                id="exampleEmail"
-                placeholder="myemail@email.com"
-              />
-            </FormGroup>
-          </Col>
+        <div className="App__Aside">
+        <Container className="App">
+          <h2>Sign In</h2>
+        <Form id="login" name="login" method="POST" action="/users/login">
           <Col>
             <FormGroup>
               <Label>Username</Label>
@@ -54,7 +21,7 @@ export default class Login extends Component {
                 type="text"
                 name="username"
                 id="username"
-                placeholder="********"
+                placeholder="Username"
               />
             </FormGroup>
           </Col>
@@ -72,7 +39,7 @@ export default class Login extends Component {
           <Button>Submit</Button>
         </Form>
         </Container>
-        </div>
+        </div>        
       )
    }
 }

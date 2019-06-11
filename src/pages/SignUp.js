@@ -5,7 +5,7 @@ import {
    FormGroup, Label, Input,
    Button,
  } from 'reactstrap';
-export default class Login extends Component { 
+export default class SignUp extends Component { 
   state = { 
   }
   

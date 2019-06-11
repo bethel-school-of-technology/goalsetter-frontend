@@ -26,7 +26,7 @@ class App extends Component {
               <Goals />
             </div>
           )}/>
-          <Route exact={true} path='/signup' render={() => (
+          <Route exact={true} path='/signUp' render={() => (
             <div className="App">
               <SignUp />
             </div>

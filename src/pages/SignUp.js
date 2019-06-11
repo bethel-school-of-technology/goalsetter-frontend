@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import {
    Container, Col, Form,
    FormGroup, Label, Input,
    Button,
  } from 'reactstrap';
-export default class SignUp extends Component { 
+export default class Login extends Component { 
   state = { 
   }
   
@@ -54,7 +55,7 @@ export default class SignUp extends Component {
                 type="text"
                 name="username"
                 id="username"
-                placeholder="********"
+                placeholder="Username"
               />
             </FormGroup>
           </Col>
@@ -69,10 +70,12 @@ export default class SignUp extends Component {
               />
             </FormGroup>
           </Col>
-          <Button>Submit</Button>
+          <Button component={Link} to="/Login">Submit</Button>
         </Form>
         </Container>
         </div>
+
+        
       )
    }
 }

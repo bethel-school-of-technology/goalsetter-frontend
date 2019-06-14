@@ -5,24 +5,26 @@ import {
    FormGroup, Label, Input,
    Button,
  } from 'reactstrap';
+
+
 export default class Login extends Component { 
   state = { 
   }
   
   render () {                                   
       return (
-        <div className="App__Aside">
-        <Container className="App">
-          <h2>Sign In</h2>
-        <Form id="login" name="login" method="POST" action="/users/login">
+        <div>
+           <Container className="App">
+          <h2>Login </h2>
+        <Form id="login" name="login" method="POST" action="/">
           <Col>
             <FormGroup>
-              <Label>Username</Label>
+              <Label>Email</Label>
               <Input
-                type="text"
-                name="username"
-                id="username"
-                placeholder="Username"
+                type="email"
+                name="email"
+                id="exampleEmail"
+                placeholder="myemail@email.com"
               />
             </FormGroup>
           </Col>
@@ -40,13 +42,9 @@ export default class Login extends Component {
           <Button component={Link} to="/Login">Submit</Button>
         </Form>
         </Container>
-<<<<<<< HEAD:src/pages/SignUp.js
         </div>
 
         
-=======
-        </div>        
->>>>>>> f010a9f9ff0fc8168c350ea06a4bc8096104482f:src/pages/Login.js
       )
    }
 }

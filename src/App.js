@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 //import Goals from './components/Goals';
 //import Planets from './components/Planets';
-import SignUp from './pages/SignUp';
+import Login from './pages/Login';
 import Users from './pages/Users';
 import Home from './pages/Home';
 import {BrowserRouter, Route} from 'react-router-dom';
@@ -26,9 +26,9 @@ class App extends Component {
               <Goals />
             </div>
           )}/>
-          <Route exact={true} path='/signUp' render={() => (
+          <Route exact={true} path='/login' render={() => (
             <div className="App">
-              <SignUp />
+              <Login />
             </div>
           )}/>
         </div>

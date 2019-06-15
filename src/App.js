@@ -6,6 +6,7 @@ import './App.css';
 import Login from './pages/Login';
 import Users from './pages/Users';
 import Home from './pages/Home';
+import Profile from './pages/Profile';
 import {BrowserRouter, Route} from 'react-router-dom';
 import Goals from './pages/Goals';
 import Planets from './pages/Planets';
@@ -29,6 +30,11 @@ class App extends Component {
           <Route exact={true} path='/login' render={() => (
             <div className="App">
               <Login />
+            </div>
+          )}/>
+          <Route exact={true} path='/profile' render={() => (
+            <div className="App">
+              <Profile uri="http://localhost:3001/goals"/>
             </div>
           )}/>
         </div>

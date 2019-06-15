@@ -6,8 +6,6 @@ import {
    Button,
  } from 'reactstrap';
 
-
-
 export default class Home extends Component {
     state = { 
     }
@@ -60,7 +58,7 @@ export default class Home extends Component {
             />
           </FormGroup>
         </Col>
-        <Button component={Link} to="/Login">Submit</Button>
+        <Button>Submit</Button>
       </Form>
             <a href="goals">Goals</a>
             <a href="login" >Login</a>

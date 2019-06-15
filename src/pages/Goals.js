@@ -14,41 +14,41 @@ export default class Goals extends Component {
      return (
        <Container className="App">
       <h2>Goals</h2>
-    <Form id="goals" name="goals" method="POST" action="/">
+    <Form id="goals" name="goals" method="POST" action="/goals">
       <Col>
         <FormGroup>
           <Label>Goal:</Label>
           <Input
             type="text"
-            name="goalName"
-            id="goalId"
+            name="Goal"
+            id="Goal"
             placeholder="Goal"
           />
         </FormGroup>
       </Col>
       <Col>
         <FormGroup>
-          <Label>Goal</Label>
+          <Label>Date Finished</Label>
           <Input
-            type="text"
-            name="goalName"
-            id="goalId"
-            placeholder="Goal"
+            type="date"
+            name="DateFinished"
+            id="DateFinished"
+            placeholder="When do you want to finish?"
           />
         </FormGroup>
       </Col>
       <Col>
         <FormGroup>
-          <Label>Goal</Label>
+          <Label>Notes</Label>
           <Input
             type="text"
-            name="goalName"
-            id="goalId"
-            placeholder="Goal"
+            name="Notes"
+            id="Notes"
+            placeholder="Tell us more about this goal."
           />
         </FormGroup>
       </Col>
-      <Button component={Link} to="/Goal">Submit</Button>
+      <Button component={Link} to="/Users">Submit</Button>
     </Form>
           
     </Container>

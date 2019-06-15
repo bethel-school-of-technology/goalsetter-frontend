@@ -16,25 +16,25 @@ export default class Login extends Component {
         <div>
            <Container className="App">
           <h2>Login </h2>
-        <Form id="login" name="login" method="POST" action="/">
+        <Form id="login" name="login" method="POST" action="/users/login">
           <Col>
             <FormGroup>
               <Label>Email</Label>
               <Input
                 type="email"
-                name="email"
-                id="exampleEmail"
+                name="Email"
+                id="Email"
                 placeholder="myemail@email.com"
               />
             </FormGroup>
           </Col>
           <Col>
             <FormGroup>
-              <Label for="username">Password</Label>
+              <Label for="Email">Password</Label>
               <Input
                 type="password"
-                name="password"
-                id="examplePassword"
+                name="Password"
+                id="Password"
                 placeholder="********"
               />
             </FormGroup>

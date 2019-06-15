@@ -15,14 +15,14 @@ export default class Home extends Component {
        return (
          <Container className="App">
         <h2>Sign Up</h2>
-      <Form id="signup" name="signup" method="POST" action="/">
+      <Form id="signup" name="signup" method="POST" action="/users/signup">
         <Col>
           <FormGroup>
             <Label>First Name:</Label>
             <Input
               type="text"
-              name="firstName"
-              id="firstName"
+              name="FirstName"
+              id="FirstName"
               placeholder="First Name"
             />
           </FormGroup>
@@ -32,8 +32,8 @@ export default class Home extends Component {
             <Label>Last Name</Label>
             <Input
               type="text"
-              name="lastName"
-              id="lastName"
+              name="LastName"
+              id="LastName"
               placeholder="Last Name"
             />
           </FormGroup>
@@ -42,31 +42,20 @@ export default class Home extends Component {
           <FormGroup>
             <Label>Email</Label>
             <Input
-              type="email"
-              name="email"
-              id="exampleEmail"
+              type="Email"
+              name="Email"
+              id="Email"
               placeholder="myemail@email.com"
             />
           </FormGroup>
         </Col>
         <Col>
           <FormGroup>
-            <Label>Username</Label>
-            <Input
-              type="text"
-              name="username"
-              id="username"
-              placeholder="Username"
-            />
-          </FormGroup>
-        </Col>
-        <Col>
-          <FormGroup>
-            <Label for="username">Password</Label>
+            <Label for="email">Password</Label>
             <Input
               type="password"
-              name="password"
-              id="examplePassword"
+              name="Password"
+              id="Password"
               placeholder="********"
             />
           </FormGroup>

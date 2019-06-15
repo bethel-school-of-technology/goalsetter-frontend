@@ -42,6 +42,16 @@ class App extends Component {
               <Users uri="http://localhost:3001/allusers"  />
             </div>
           )}/>
+          <Route exact={true} path='/goals/allgoals' render={() => (
+            <div className="App">
+              <Users uri="http://localhost:3001/goals/allgoals"  />
+            </div>
+          )}/>
+          <Route exact={true} path='/users/profile' render={() => (
+            <div className="App">
+              <Users uri="http://localhost:3001/users/profile"  />
+            </div>
+          )}/>
       </BrowserRouter>
     );
   }

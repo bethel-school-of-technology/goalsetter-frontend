@@ -5,7 +5,7 @@ import {
    FormGroup, Label, Input,
    Button,
  } from 'reactstrap';
-
+ import Header from '../components/Header';
 
 export default class Login extends Component { 
   state = { 
@@ -15,6 +15,7 @@ export default class Login extends Component {
       return (
         <div>
            <Container className="App">
+           <Header title />
           <h2>Login </h2>
         <Form id="login" name="login" method="POST" action="/users/login">
           <Col>

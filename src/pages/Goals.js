@@ -5,7 +5,7 @@ import {
   Button,
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
-
+import Header from '../components/Header';
 
 export default class Goals extends Component { 
   state = { 
@@ -13,6 +13,7 @@ export default class Goals extends Component {
   render () {                                   
      return (
        <Container className="App">
+         <Header title />
       <h2>Goals</h2>
     <Form id="goals" name="goals" method="POST" action="/goals">
       <Col>
@@ -50,9 +51,11 @@ export default class Goals extends Component {
       </Col>
       <Button component={Link} to="/Users">Submit</Button>
     </Form>
-          
+    
+
     </Container>
      
+
      )
   }
 }

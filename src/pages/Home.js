@@ -5,6 +5,7 @@ import {
    FormGroup, Label, Input,
    Button,
  } from 'reactstrap';
+ import Header from '../components/Header';
 
 export default class Home extends Component {
     state = { 
@@ -12,6 +13,7 @@ export default class Home extends Component {
     render () {                                   
        return (
          <Container className="App">
+           <Header title />
         <h2>Sign Up</h2>
       <Form id="signup" name="signup" method="POST" action="/users/signup">
         <Col>

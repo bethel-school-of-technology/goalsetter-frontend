@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import Header from '../components/Header';
 
 
 
@@ -30,11 +31,17 @@ class Profile extends React.Component {
     }
     const goals = this.state.goalData.map(goal => (
       <div key={goal.Goal}>
+        <Header title />;
         <em>{goal.Goal}</em>: <em>{goal.DateFinished}</em>
+        
       </div>
+      
+
     ));
     return <div>{goals}</div>;
+
   }
 }
+
 
 export default Profile;

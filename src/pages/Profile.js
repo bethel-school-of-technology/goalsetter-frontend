@@ -31,7 +31,8 @@ class Profile extends React.Component {
     }
     const goals = this.state.goalData.map(goal => (
       <div key={goal.Goal}>
-        <Header title />;
+        <Header title />
+        <a href="login" >Logout</a>
         <em>{goal.Goal}</em>: <em>{goal.DateFinished}</em>
         
       </div>

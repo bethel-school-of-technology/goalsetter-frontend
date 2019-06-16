@@ -14,6 +14,7 @@ export default class Home extends Component {
        return (
          <Container className="App">
            <Header title />
+           <a href="login" >Login</a>
         <h2>Sign Up</h2>
       <Form id="signup" name="signup" method="POST" action="/users/signup">
         <Col>
@@ -63,7 +64,6 @@ export default class Home extends Component {
         <Button>Submit</Button>
       </Form>
             <a href="goals">Goals</a>
-            <a href="login" >Login</a>
             <a href="planets">Planets</a>
             <a href="users">Users</a>
       </Container>

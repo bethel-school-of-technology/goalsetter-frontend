@@ -5,7 +5,7 @@ import {
   Button,
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import Header from '../components/Header';
+import Header from '../Components/Header';
 
 export default class Goals extends Component { 
   state = { 

@@ -9,7 +9,6 @@ import Home from './pages/Home';
 import Profile from './pages/Profile';
 import {BrowserRouter, Route} from 'react-router-dom';
 import Goals from './pages/Goals';
-import Planets from './pages/Planets';
 
 
 class App extends Component {
@@ -38,11 +37,7 @@ class App extends Component {
             </div>
           )}/>
         </div>
-        <Route exact={true} path='/planets' render={() => (
-            <div className="App">
-              <Planets uri="http://localhost:3001/staticPlanets"  />
-            </div>
-          )}/>
+     
           <Route exact={true} path='/users' render={() => (
             <div className="App">
               <Users uri="http://localhost:3001/allusers"  />
@@ -56,6 +51,11 @@ class App extends Component {
           <Route exact={true} path='/users/profile' render={() => (
             <div className="App">
               <Users uri="http://localhost:3001/users/profile"  />
+            </div>
+          )}/>
+          <Route exact={true} path='/users/logout' render={() => (
+            <div className="App">
+              <Users uri="http://localhost:3001/users/logout"  />
             </div>
           )}/>
       </BrowserRouter>

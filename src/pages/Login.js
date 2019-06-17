@@ -5,7 +5,7 @@ import {
    FormGroup, Label, Input,
    Button,
  } from 'reactstrap';
- import Header from '../components/Header';
+ import Header from '../Components/Header';
 
 export default class Login extends Component { 
   state = { 

@@ -12,7 +12,7 @@ export default class Home extends Component {
     }
     render () {                                   
        return (
-         <Container className="App">
+         <Container className="App__Aside">
            <Header title />
            <a href="login" >Login</a>
         <h2>Sign Up</h2>

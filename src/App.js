@@ -10,13 +10,14 @@ import Profile from './pages/Profile';
 import {BrowserRouter, Route} from 'react-router-dom';
 import Goals from './pages/Goals';
 import ProfileGoals from './Components/profileGoals';
+import Account from './pages/Account';
 
 
 class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <div>
+        <div >
           <Route exact={true} path='/' render={() => (
             <div className="App">
               <Home />
@@ -57,6 +58,11 @@ class App extends Component {
           <Route exact={true} path='/users/logout' render={() => (
             <div className="App">
               <Users uri="http://localhost:3001/users/logout"  />
+            </div>
+          )}/>
+          <Route exact={true} path='/account' render={() => (
+            <div className="App">
+              <Account  />
             </div>
           )}/>
       </BrowserRouter>

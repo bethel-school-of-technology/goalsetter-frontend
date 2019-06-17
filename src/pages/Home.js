@@ -63,9 +63,6 @@ export default class Home extends Component {
         </Col>
         <Button>Submit</Button>
       </Form>
-            <a href="goals">Goals</a>
-            <a href="planets">Planets</a>
-            <a href="users">Users</a>
       </Container>
        
        )

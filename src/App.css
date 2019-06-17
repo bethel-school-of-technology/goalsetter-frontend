@@ -1,7 +1,7 @@
 .Header {
   background-color: #e85a4f;
   min-height: 15vh;
-  min-width: 100%;
+ width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,6 +10,17 @@
   color: white;
 }
 
+.AddGoal {
+  background-color: #ffffff;
+  min-height: 35vh;
+ width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(40px + 2vmin);
+  color: #e85a4f;
+}
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
@@ -17,7 +28,7 @@
   pointer-events: none;
 }
 
-.App-header {
+/* .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -26,10 +37,10 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
+} */
 
 .App-link {
-  color: #61dafb;
+  color: #666666;
 }
 
 @keyframes App-logo-spin {
@@ -43,12 +54,13 @@
 
 .Flower {
   background-color: #282c34;
+  margin: 2px;
   min-height: 7vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-size: calc(5px + 2vmin);
+  color: white !important;
 }
 

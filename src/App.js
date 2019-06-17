@@ -9,6 +9,7 @@ import Home from './pages/Home';
 import Profile from './pages/Profile';
 import {BrowserRouter, Route} from 'react-router-dom';
 import Goals from './pages/Goals';
+import ProfileGoals from './Components/profileGoals';
 
 
 class App extends Component {
@@ -33,21 +34,21 @@ class App extends Component {
           )}/>
           <Route exact={true} path='/profile' render={() => (
             <div className="App">
-              <Profile uri="http://localhost:3001/goals"/>
+              <Profile />
             </div>
           )}/>
+        
         </div>
-     
           <Route exact={true} path='/users' render={() => (
             <div className="App">
               <Users uri="http://localhost:3001/allusers"  />
             </div>
           )}/>
-          <Route exact={true} path='/goals/allgoals' render={() => (
+          {/* <Route exact={true} path='/goals/allgoals' render={() => (
             <div className="App">
               <Users uri="http://localhost:3001/goals/allgoals"  />
             </div>
-          )}/>
+          )}/> */}
           <Route exact={true} path='/users/profile' render={() => (
             <div className="App">
               <Users uri="http://localhost:3001/users/profile"  />

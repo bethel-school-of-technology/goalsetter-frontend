@@ -36,5 +36,4 @@ class UserInformation extends React.Component {
     return <div>{users}</div>;
   }
 }
-
 export default UserInformation;

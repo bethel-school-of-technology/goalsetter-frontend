@@ -1,8 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
+
 
 const Header = ({ title }) => (
-    <div>
-        <h1 className="Header">GOALSetter</h1>
+    <div className="Header">
+       <a href="/profile"><h1 className="white" >GOALSetter</h1></a>
+      
       
       
       <h1>{title}</h1>

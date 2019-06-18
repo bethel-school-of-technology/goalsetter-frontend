@@ -32,7 +32,7 @@ class ProfileGoals extends React.Component {
     const goals = this.state.goalData.map(goal => (
 <div 
 key={goal.Goal}>
- <a href="/specificGoal" className="Flower"> {goal.Goal} : {goal.DateFinished} </a>
+ <a href="/specificGoal"><li className="Flower">{goal.Goal} : {goal.DateFinished}</li>  </a>
         </div>
       
 

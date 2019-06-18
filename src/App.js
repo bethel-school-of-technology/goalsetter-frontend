@@ -23,11 +23,21 @@ class App extends Component {
               <Home />
             </div>
           )}/>
-          <Route exact={true} path='/goals' render={() => (
-            <div className="App">
-              <Goals />
-            </div>
-          )}/>
+          <Route exact={true} path='/goals' render={() => 
+          (<div className="App">
+            <Goals />
+          </div>)
+          // !isAuthenticated ? (
+          //   <div className="App">
+          //     <Login />
+          //   </div>
+          // ) : (
+          //   <div className="App">
+          //     <Goals />
+          //   </div>
+          // )
+
+          }/>
           <Route exact={true} path='/login' render={() => (
             <div className="App">
               <Login />

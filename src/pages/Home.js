@@ -32,7 +32,7 @@ export default class Home extends Component {
       console.log('Event: ', event)
       console.log('Event name: ', event.target.name)
       console.log('Event Value: ', event.target.value)
-      // update the state of that with the eent.target.value so that your state is the data
+      // update the state of that with the event.target.value so that your state is the data
       this.setState({
         [event.target.name]: event.target.value
       })
@@ -94,6 +94,7 @@ export default class Home extends Component {
           </FormGroup>
         </Col>
         <Button onClick={this.createUser}>Submit</Button>
+        <button onClick={this._handleLogout}>LOGOUT</button>
       </Form>
       </Container>
        

@@ -13,8 +13,13 @@ import ProfileGoals from './Components/profileGoals';
 import Account from './pages/Account';
 
 
+
 class App extends Component {
-  render() {
+  state = {
+    email: ''
+  }
+
+  render () {  
     return (
       <BrowserRouter>
         <div >
@@ -71,6 +76,7 @@ class App extends Component {
               <Account uri="http://localhost:3001/users/profile" />
             </div>
           )}/>
+          
       </BrowserRouter>
     );
   }

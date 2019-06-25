@@ -17,13 +17,13 @@ const title = {
   pageTitle: 'Login',
 };
 
-class Login extends Component {
+class Login extends Component () {
   constructor() {
     super();
 
     this.state = {
-      username: '',
-      password: '',
+      Email: '',
+      Password: '',
       loggedIn: false,
       showError: false,
       showNullError: false,
@@ -38,8 +38,8 @@ class Login extends Component {
 
   loginUser = async (e) => {
     e.preventDefault();
-    const { email, password } = this.state;
-    if (email === '' || password === '') {
+    const { Email, Password } = this.state;
+    if (Email === '' || Password === '') {
       this.setState({
         showError: false,
         showNullError: true,
@@ -48,8 +48,8 @@ class Login extends Component {
     } else {
       try {
         const response = await axios.post('http://localhost:3001/loginUser', {
-          email,
-          password,
+          Email,
+          Password,
         });
         localStorage.setItem('JWT', response.data.token);
         this.setState({
@@ -74,8 +74,8 @@ class Login extends Component {
 
   render() {
     const {
-      email,
-      password,
+      Email,
+      Password,
       showError,
       loggedIn,
       showNullError,
@@ -87,18 +87,18 @@ class Login extends Component {
           <form className="profile-form" onSubmit={this.loginUser}>
             <TextField
               style={inputStyle}
-              id="email"
-              label="email"
-              value={email}
-              onChange={this.handleChange('email')}
+              id="Email"
+              label="Email"
+              value={Email}
+              onChange={this.handleChange('Email')}
               placeholder="Email"
             />
             <TextField
               style={inputStyle}
-              id="password"
-              label="password"
-              value={password}
-              onChange={this.handleChange('password')}
+              id="Password"
+              label="Password"
+              value={Password}
+              onChange={this.handleChange('Password')}
               placeholder="Password"
               type="password"
             />
@@ -126,7 +126,7 @@ class Login extends Component {
         </div>
       );
     }
-    return <Redirect to={`/userProfile/${email}`} />;
+    return <Redirect to={`/userProfile/${Email}`} />;
   }
 }
 

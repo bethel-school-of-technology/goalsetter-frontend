@@ -25,10 +25,20 @@ class App extends Component {
       <BrowserRouter>
         <div >
           <Route exact={true} path='/' render={() => (
-            <div className="App">
-              <Home />
+            <div className="SignUp">
+              <SignUp />
             </div>
           )}/>
+           <Route exact={true} path='/login' render={() => (
+            <div className="Login">
+              <SignUp />
+            </div>
+          )}/>
+           {/* <Route exact={true} path='/SignUp' render={() => (
+            <div className="SignUp">
+              <SignUp />
+            </div> */}
+          {/* )}/> */}
           <Route exact={true} path='/goals' render={() => 
           (<div className="App">
             <Goals />
@@ -44,11 +54,7 @@ class App extends Component {
           // )
 
           }/>
-          <Route exact={true} path='/signup' render={() => (
-            <div className="App">
-              <SignUp />
-            </div>
-          )}/>
+          
           <Route exact={true} path='/login' render={() => (
             <div className="App">
               <Login />

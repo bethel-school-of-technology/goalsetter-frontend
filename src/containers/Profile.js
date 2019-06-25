@@ -32,10 +32,10 @@ class Profile extends Component {
     super();
 
     this.state = {
-      first_name: '',
-      last_name: '',
-      email: '',
-      password: '',
+      FirstName: '',
+      LastName: '',
+      Email: '',
+      Password: '',
       isLoading: true,
       deleted: false,
       error: false,
@@ -46,10 +46,10 @@ class Profile extends Component {
     const accessString = localStorage.getItem('JWT');
     const {
       match: {
-        params: { email },
+        params: { Email },
       },
     } = this.props;
-    console.log(email);
+    console.log(Email);
     if (accessString == null) {
       this.setState({
         isLoading: false,
@@ -59,15 +59,15 @@ class Profile extends Component {
       try {
         const response = await axios.get('http://localhost:3001/findUser', {
           params: {
-            email,
+            Email,
           },
           headers: { Authorization: `JWT ${accessString}` },
         });
         this.setState({
-          first_name: response.data.first_name,
-          last_name: response.data.last_name,
-          email: response.data.email,
-          password: response.data.password,
+          FirstName: response.data.FirstName,
+          LastName: response.data.LastName,
+          Email: response.data.Email,
+          Password: response.data.Password,
           isLoading: false,
           error: false,
         });
@@ -84,7 +84,7 @@ class Profile extends Component {
     const accessString = localStorage.getItem('JWT');
     const {
       match: {
-        params: { email },
+        params: { Email },
       },
     } = this.props;
     if (accessString === null) {
@@ -98,7 +98,7 @@ class Profile extends Component {
     try {
       const response = await axios.delete('http://localhost:3000/deleteUser', {
         params: {
-          email,
+          Email,
         },
         headers: { Authorization: `JWT ${accessString}` },
       });
@@ -122,10 +122,10 @@ class Profile extends Component {
 
   render() {
     const {
-      first_name,
-      last_name,
-      email,
-      password,
+      FirstName,
+      LastName,
+      Email,
+      Password,
       error,
       isLoading,
       deleted,
@@ -164,20 +164,20 @@ class Profile extends Component {
           <TableBody>
             <TableRow>
               <TableCell>First Name</TableCell>
-              <TableCell>{first_name}</TableCell>
+              <TableCell>{FirstName}</TableCell>
             </TableRow>
             <TableRow>
               <TableCell>Last Name</TableCell>
-              <TableCell>{last_name}</TableCell>
+              <TableCell>{LastName}</TableCell>
             </TableRow>
             <TableRow>
               <TableCell>Email</TableCell>
-              <TableCell>{email}</TableCell>
+              <TableCell>{Email}</TableCell>
             </TableRow>
             <TableRow>
               <TableCell>Password</TableCell>
               <TableCell style={{ WebkitTextSecurity: 'disc' }}>
-                {password}
+                {Password}
               </TableCell>
             </TableRow>
           </TableBody>
@@ -193,7 +193,7 @@ class Profile extends Component {
         <LinkButtons
           buttonStyle={updateButton}
           buttonText="Update User"
-          link={`/updateUser/${email}`}
+          link={`/updateUser/${Email}`}
         />
         <Button
           style={logoutButton}
@@ -214,7 +214,7 @@ Profile.propTypes = {
   // eslint-disable-next-line react/require-default-props
   match: PropTypes.shape({
     params: PropTypes.shape({
-      email: PropTypes.string.isRequired,
+      Email: PropTypes.string.isRequired,
     }),
   }),
 };

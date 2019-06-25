@@ -3,7 +3,7 @@ import {
   HeaderBar,
   LinkButtons,
   loginButton,
-  registerButton,
+  signupButton,
 } from '../components';
 
 const title = {

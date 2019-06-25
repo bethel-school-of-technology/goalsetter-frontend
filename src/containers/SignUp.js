@@ -9,8 +9,7 @@ import {
   homeButton,
   loginButton,
   inputStyle,
-  HeaderBar,
-} from '../components';
+} from '../Components';
 
 // const title = {
 //   pageTitle: 'Sign Up',
@@ -96,7 +95,7 @@ class SignUp extends Component {
     if (messageFromServer === '') {
       return (
         <div>
-          <HeaderBar title='signup' />
+          <h1>Sign Up</h1> 
           <form className="profile-form" onSubmit={this.signupUser}>
             <TextField
               style={inputStyle}
@@ -158,10 +157,11 @@ class SignUp extends Component {
     if (messageFromServer === 'user created') {
       return (
         <div>
-          <HeaderBar title={title} />
+          <h1>Sign Up</h1> 
           <h3>User successfully registered!</h3>
           <LinkButtons
             buttonText="Go Login"
+            id="signup" name="signup" method="POST" action="/signupUser"
             buttonStyle={loginButton}
             link="/login"
           />

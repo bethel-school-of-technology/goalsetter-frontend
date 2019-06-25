@@ -9,11 +9,12 @@ import {
   homeButton,
   loginButton,
   inputStyle,
+  HeaderBar,
 } from '../Components';
 
-// const title = {
-//   pageTitle: 'Sign Up',
-// };
+const title = {
+  pageTitle: 'Sign Up',
+};
 
 class SignUp extends Component {
   constructor(props) {
@@ -50,22 +51,21 @@ class SignUp extends Component {
       });
     } else {
       try {
-        console.log('DATA: ', FirstName, LastName, Password, Email)
-        // const response = await axios.post(
-        //   'http://localhost:3000/signupUser',
-        //   {
-        //     FirstName: first_name,
-        //     last_name,
-        //     email,
-        //     password,
-        //   },
-        // );
-        // this.setState({
-        //   messageFromServer: response.data.message,
-        //   showError: false,
-        //   loginError: false,
-        //   signupError: false,
-        // });
+        const response = await axios.post(
+          'http://localhost:3000/signupUser',
+          {
+            FirstName,
+            LastName,
+            Email,
+            Password,
+          },
+        );
+        this.setState({
+          messageFromServer: response.data.message,
+          showError: false,
+          loginError: false,
+          signupError: false,
+        });
       } catch (error) {
         console.error(error.response.data);
         if (error.response.data === 'Email already taken') {
@@ -95,7 +95,7 @@ class SignUp extends Component {
     if (messageFromServer === '') {
       return (
         <div>
-          <h1>Sign Up</h1> 
+           <HeaderBar title={title} />
           <form className="profile-form" onSubmit={this.signupUser}>
             <TextField
               style={inputStyle}
@@ -161,7 +161,6 @@ class SignUp extends Component {
           <h3>User successfully registered!</h3>
           <LinkButtons
             buttonText="Go Login"
-            id="signup" name="signup" method="POST" action="/signupUser"
             buttonStyle={loginButton}
             link="/login"
           />

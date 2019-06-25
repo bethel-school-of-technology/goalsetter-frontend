@@ -13,16 +13,16 @@ async; componentDidMount(); {
     await Axios
     .get('http://localhost:3000/findUser', {
         params: {
-            email: this.props.match.params.email,
+            Email: this.props.match.params.Email,
         },
         headers: { Authorization: `JWT ${accessString}`},
     })
     .then(response => {
         this.setState({
-            first_name: response.data.first_name,
-            last_name: response.data.last_name,
-            email: response.data.email,
-            password: response.data.password,
+            FirstName: response.data.FirstName,
+            LastName: response.data.LastName,
+            Email: response.data.Email,
+            Password: response.data.Password,
             isLoading: false,
             error: false,
         });

@@ -12,6 +12,7 @@ import {
   saveButton,
   loginButton,
   inputStyle,
+  HeaderBar,
 } from '../components';
 
 const loading = {
@@ -28,10 +29,10 @@ class UpdateProfile extends Component {
     super(props);
 
     this.state = {
-      first_name: '',
-      last_name: '',
-      email: '',
-      password: '',
+      FirstName: '',
+      LastName: '',
+      Email: '',
+      Password: '',
       loadingUser: false,
       updated: false,
       error: false,
@@ -50,23 +51,23 @@ class UpdateProfile extends Component {
     }
     const {
       match: {
-        params: { email },
+        params: { Email },
       },
     } = this.props;
     try {
       const response = await axios.get('http://localhost:3000/findUser', {
         params: {
-          email,
+          Email,
         },
         headers: { Authorization: `JWT ${accessString}` },
       });
       console.log(response.data);
       this.setState({
         loadingUser: false,
-        first_name: response.data.first_name ? response.data.first_name : '',
-        last_name: response.data.last_name ? response.data.last_name : '',
-        email: response.data.email,
-        password: response.data.password,
+        FirstName: response.data.FirstName ? response.data.first_name : '',
+        LastName: response.data.LastName ? response.data.LastName : '',
+        Email: response.data.Email,
+        Password: response.data.Password,
         error: false,
       });
     } catch (error) {
@@ -89,16 +90,16 @@ class UpdateProfile extends Component {
       });
     }
     const {
- first_name, last_name, email
+ FirstName, LastName, Email
 } = this.state;
     e.preventDefault();
     try {
       const response = await axios.put(
         'http://localhost:3001/updateUser',
         {
-          first_name,
-          last_name,
-          email,
+          FirstName,
+          LastName,
+          Email,
         },
         {
           headers: { Authorization: `JWT ${accessString}` },
@@ -122,10 +123,10 @@ class UpdateProfile extends Component {
   // eslint-disable-next-line consistent-return
   render() {
     const {
-      first_name,
-      last_name,
-      email,
-      password,
+      FirstName,
+      LastName,
+      Email,
+      Password,
       updated,
       error,
       loadingUser,
@@ -155,7 +156,7 @@ class UpdateProfile extends Component {
       );
     }
     if (loadingUser === false && updated === true) {
-      return <Redirect to={`/userProfile/${email}`} />;
+      return <Redirect to={`/userProfile/${Email}`} />;
     }
     if (loadingUser === false) {
       return (
@@ -164,36 +165,36 @@ class UpdateProfile extends Component {
           <form className="profile-form" onSubmit={this.updateUser}>
             <TextField
               style={inputStyle}
-              id="first_name"
-              label="first_name"
-              value={first_name}
-              onChange={this.handleChange('first_name')}
+              id="FirstName"
+              label="FirstName"
+              value={FirstName}
+              onChange={this.handleChange('FirstName')}
               placeholder="First Name"
             />
             <TextField
               style={inputStyle}
-              id="last_name"
-              label="last_name"
-              value={last_name}
-              onChange={this.handleChange('last_name')}
+              id="LastName"
+              label="LastName"
+              value={LastName}
+              onChange={this.handleChange('LastName')}
               placeholder="Last Name"
             />
             <TextField
               style={inputStyle}
-              id="email"
-              label="email"
-              value={email}
-              onChange={this.handleChange('email')}
+              id="Email"
+              label="Email"
+              value={Email}
+              onChange={this.handleChange('Email')}
               placeholder="Email"
             />
             <TextField
               style={inputStyle}
-              id="password"
-              label="password"
-              value={password}
+              id="Password"
+              label="Password"
+              value={Password}
               readOnly
               disabled
-              type="password"
+              type="Password"
             />
             <SubmitButtons buttonStyle={saveButton} buttonText="Save Changes" />
           </form>
@@ -201,7 +202,7 @@ class UpdateProfile extends Component {
           <LinkButtons
             buttonStyle={cancelButton}
             buttonText="Cancel Changes"
-            link={`/userProfile/${email}`}
+            link={`/userProfile/${Email}`}
           />
         </div>
       );

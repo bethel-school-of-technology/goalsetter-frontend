@@ -152,6 +152,18 @@ export default class Profile extends Component {
         <div>
         <Container className="App">
         <Header title />
+        <Col>
+        <FormGroup>
+          <Label>First Name</Label>
+          <Input type="first_name"/>
+        </FormGroup>
+        </Col>
+        <Col>
+        <FormGroup>
+          <Label>Last Name</Label>
+          <Input type="last_name"/>
+        </FormGroup>
+        </Col>
        <Col>
          <FormGroup>
            <Label>Email</Label>

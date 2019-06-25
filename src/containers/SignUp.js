@@ -21,10 +21,10 @@ class SignUp extends Component {
     super(props);
 
     this.state = {
-      first_name: '',
-      last_name: '',
+      FirstName: '',
+      LastName: '',
       email: '',
-      password: '',
+      Password: '',
       messageFromServer: '',
       showError: false,
       signupError: false,
@@ -41,9 +41,9 @@ class SignUp extends Component {
   registerUser = async (e) => {
     e.preventDefault();
     const {
- first_name, last_name, password, email 
+ FirstName, LastName, Password, Email 
 } = this.state;
-    if (email === '' || password === '' ) {
+    if (Email === '' || Password === '' ) {
       this.setState({
         showError: true,
         loginError: false,
@@ -51,24 +51,25 @@ class SignUp extends Component {
       });
     } else {
       try {
-        const response = await axios.post(
-          'http://localhost:3000/signupUser',
-          {
-            first_name,
-            last_name,
-            email,
-            password,
-          },
-        );
-        this.setState({
-          messageFromServer: response.data.message,
-          showError: false,
-          loginError: false,
-          signupError: false,
-        });
+        console.log('DATA: ', FirstName, LastName, Password, Email)
+        // const response = await axios.post(
+        //   'http://localhost:3000/signupUser',
+        //   {
+        //     FirstName: first_name,
+        //     last_name,
+        //     email,
+        //     password,
+        //   },
+        // );
+        // this.setState({
+        //   messageFromServer: response.data.message,
+        //   showError: false,
+        //   loginError: false,
+        //   signupError: false,
+        // });
       } catch (error) {
         console.error(error.response.data);
-        if (error.response.data === 'email already taken') {
+        if (error.response.data === 'Email already taken') {
           this.setState({
             showError: true,
             loginError: true,
@@ -82,10 +83,10 @@ class SignUp extends Component {
   // eslint-disable-next-line consistent-return
   render() {
     const {
-      first_name,
-      last_name,
-      email,
-      password,
+      FirstName,
+      LastName,
+      Email,
+      Password,
       messageFromServer,
       showError,
       loginError,
@@ -95,40 +96,40 @@ class SignUp extends Component {
     if (messageFromServer === '') {
       return (
         <div>
-          <HeaderBar title={title} />
+          <HeaderBar title='signup' />
           <form className="profile-form" onSubmit={this.signupUser}>
             <TextField
               style={inputStyle}
-              id="first_name"
-              label="first_name"
-              value={first_name}
-              onChange={this.handleChange('first_name')}
+              id="FirstName"
+              label="FirstName"
+              value={FirstName}
+              onChange={this.handleChange('FirstName')}
               placeholder="First Name"
             />
             <TextField
               style={inputStyle}
-              id="last_name"
-              label="last_name"
-              value={last_name}
-              onChange={this.handleChange('last_name')}
+              id="LastName"
+              label="LastName"
+              value={LastName}
+              onChange={this.handleChange('LastName')}
               placeholder="Last Name"
             />
             <TextField
               style={inputStyle}
-              id="email"
-              label="email"
-              value={email}
-              onChange={this.handleChange('email')}
+              id="Email"
+              label="Email"
+              value={Email}
+              onChange={this.handleChange('Email')}
               placeholder="Email"
             />
             <TextField
               style={inputStyle}
-              id="password"
-              label="password"
-              value={password}
-              onChange={this.handleChange('password')}
+              id="Password"
+              label="Password"
+              value={Password}
+              onChange={this.handleChange('Password')}
               placeholder="Password"
-              type="password"
+              type="Password"
             />
             <SubmitButtons buttonStyle={signupButton} buttonText="Sign Up" />
           </form>

@@ -9,6 +9,7 @@ import Profile from './pages/Profile';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter, Route} from 'react-router-dom';
 import Goals from './pages/Goals';
+import SignUp from './containers/SignUp';
 import ProfileGoals from './Components/profileGoals';
 import Account from './pages/Account';
 
@@ -43,6 +44,11 @@ class App extends Component {
           // )
 
           }/>
+          <Route exact={true} path='/signup' render={() => (
+            <div className="App">
+              <SignUp />
+            </div>
+          )}/>
           <Route exact={true} path='/login' render={() => (
             <div className="App">
               <Login />

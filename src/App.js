@@ -19,12 +19,12 @@ class App extends Component {
       <BrowserRouter>
         <div >
           <Route exact={true} path='/' render={() => (
-            <div className="App">
+            <div className="Home">
               <Home />
             </div>
           )}/>
           <Route exact={true} path='/goals' render={() => 
-          (<div className="App">
+          (<div className="Goals">
             <Goals />
           </div>)
           // !isAuthenticated ? (
@@ -39,12 +39,12 @@ class App extends Component {
 
           }/>
           <Route exact={true} path='/login' render={() => (
-            <div className="App">
+            <div className="Login">
               <Login />
             </div>
           )}/>
           <Route exact={true} path='/profile' render={() => (
-            <div className="App">
+            <div className="Profile">
               <Profile />
             </div>
           )}/>
@@ -62,7 +62,7 @@ class App extends Component {
           )}/> */}
          
           <Route exact={true} path='/users/logout' render={() => (
-            <div className="App">
+            <div className="Users">
               <Users uri="http://localhost:3001/users/logout"  />
             </div>
           )}/>

@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import {
    Container, Col, Form,
    FormGroup, Label, Input,
    Button,
  } from 'reactstrap';
  import Header from '../Components/Header';
+ import axios from 'axios';
+import { async } from 'q';
+
+
+
 
 export default class Home extends Component {
     state = {
@@ -16,31 +21,58 @@ export default class Home extends Component {
       errMessage: ''
     }
 
-    createUser = () => {
+    componentDidMount() {
+      console.log('this: ', this.props.history)
+    }
+
+    createUser =  async e => {
+      this.setState({ loading: true })
       const { firstName, lastName, email, password } = this.state;
-      console.log('this.state: ', this.state)
-      // what is the current state of name, etc, make sure it's complete.
-      if (firstName === '') {
+
+      const bodyFormData = {
+        FirstName: firstName,
+        LastName: lastName,
+        Email: email,
+        Password: password,
+        redirect: false,
+      }
+
+      const res = await axios.post(
+        "http://localhost:3001/users/signup",
+        bodyFormData
+      )
+      .then(res => {
+        return res
+      })
+      .catch(err => {
+        return err
+      })
+
+      if (res.status === 200) {
+        console.log('it was successful for us!')
+        // because this is true, we want to redirect the user to /login
         this.setState({
-          errMessage: 'First Name Required'
+          loading: false,
+          redirect: true,
         })
       }
-      // Send data to db via axios post to create user, if successful then reroute user to your other client route that matches login
-    }    
+}    
 
     onChange = event => {
-      console.log('Event: ', event)
-      console.log('Event name: ', event.target.name)
-      console.log('Event Value: ', event.target.value)
       // update the state of that with the eent.target.value so that your state is the data
       this.setState({
         [event.target.name]: event.target.value
       })
     }
+    
 
-    render () {                                   
+    render () {
+      if (this.state.redirect) {
+        return <Redirect to='/login' />
+      }
+      
        return (
-         <Container className="App">
+         <Container className="Home">
            <Header title />
            <a href="login" >Login</a>
         <h2>Sign Up</h2>

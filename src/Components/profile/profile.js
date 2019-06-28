@@ -16,7 +16,7 @@ return (
         <div className="row">
           <div className="col s12 center-align">
             <h4>
-              <b>Hello,</b> {user.name.split(" ")[0]}
+              <b>Hello,</b> {user.FirstName.split(" ")[0]}
               
             </h4>
             <button

@@ -55,7 +55,7 @@ this.props.loginUser(userData);
   };
 
 render() {
-    const { errors, FirstName, LastName, Email, Password } = this.state;
+    const { errors, Email, Password } = this.state;
 return (
       <Container className="Login">
         <Header title />

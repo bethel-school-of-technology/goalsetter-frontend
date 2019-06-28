@@ -9,19 +9,16 @@ import {
 // Register User
 export const signupUser = (userData, history) => dispatch => {
   axios
-    .post("/users/signup", userData)
+    .post("http://localhost:3001/users/signup", userData)
     .then(res => history.push("/login")) // re-direct to login on successful signup
     .catch(err =>
-      dispatch({
-        type: GET_ERRORS,
-        payload: err.response.data
-      })
+     console.log(err)
     );
 };
 // Login - get user token
 export const loginUser = userData => dispatch => {
   axios
-    .post("/users/login", userData)
+    .post("http://localhost:3001/users/login", userData)
     .then(res => {
       // Save to localStorage
 // Set token to localStorage

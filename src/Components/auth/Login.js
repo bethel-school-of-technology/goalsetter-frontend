@@ -46,8 +46,8 @@ onChange = e => {
 onSubmit = e => {
     e.preventDefault();
 const userData = {
-      email: this.state.email,
-      password: this.state.password
+      Email: this.state.Email,
+      Password: this.state.Password
     };
 
 this.props.loginUser(userData);
@@ -55,19 +55,19 @@ this.props.loginUser(userData);
   };
 
 render() {
-    const { errors } = this.state;
+    const { errors, FirstName, LastName, Email, Password } = this.state;
 return (
       <Container className="Login">
         <Header title />
         <h2>Login</h2>
-            <Link to="/" className="btn-flat waves-effect">
+            {/* <Link to="/" className="btn-flat waves-effect">
               <i className="material-icons left">keyboard_backspace</i> Back to
               home
-            </Link>
+            </Link> */}
             <div className="col s12" style={{ paddingLeft: "11.250px" }}>
-              <h4>
+              {/* <h4>
                 <b>Login</b> below
-              </h4>
+              </h4> */}
               <p className="grey-text text-darken-1">
                 Don't have an account? <Link to="/signup">Sign Up</Link>
               </p>
@@ -76,22 +76,22 @@ return (
               <div className="input-field col s12">
                 <input
                   onChange={this.onChange}
-                  value={this.state.email}
-                  error={errors.email}
-                  id="email"
-                  type="email"
+                  value={Email}
+                  error={errors.Email}
+                  id="Email"
+                  type="Email"
                 />
-                <label htmlFor="email">Email</label>
+                <label htmlFor="Email">Email</label>
               </div>
               <div className="input-field col s12">
                 <input
                   onChange={this.onChange}
-                  value={this.state.password}
-                  error={errors.password}
-                  id="password"
-                  type="password"
+                  value={Password}
+                  error={errors.Password}
+                  id="Password"
+                  type="Password"
                 />
-                <label htmlFor="password">Password</label>
+                <label htmlFor="Password">Password</label>
               </div>
               <div className="col s12" style={{ paddingLeft: "11.250px" }}>
                 <button

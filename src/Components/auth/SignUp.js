@@ -62,10 +62,10 @@ return (
       <Container className="Home">
         <Header title />
         <h2>Sign Up</h2>
-            <Link to="/" className="btn-flat waves-effect">
+            {/* <Link to="/" className="btn-flat waves-effect">
               <i className="material-icons left">keyboard_backspace</i> Back to
               home
-            </Link>
+            </Link> */}
             <div className="col s12" style={{ paddingLeft: "11.250px" }}>
               <p className="grey-text text-darken-1">
                 Already have an account? <Link to="/login">Log in</Link>

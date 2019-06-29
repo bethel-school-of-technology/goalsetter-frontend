@@ -73,8 +73,7 @@ export default class Goals extends Component {
  }
  render () {
     return (
-      <Container className="App">
-        <Header title />
+      <div>
    <Form id="goals" name="goals" method="POST" action="/goals">
      <Col className="topMargin">
        <FormGroup>
@@ -113,7 +112,7 @@ export default class Goals extends Component {
    </Form>
 
 
-   </Container>
+   </div>
 
 
     )

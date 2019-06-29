@@ -10,6 +10,18 @@
   color: white;
 }
 
+.Header1 {
+  background-color: #e85a4f;
+  min-height: 15vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(22px + 2vmin);
+  color: white;
+}
+
 .AddGoal {
   background-color: #ffffff;
   min-height: 35vh;
@@ -228,7 +240,6 @@ li:nth-child(odd) { background:#d8c3a5; }
 .topMargin_white {
   padding-top: 30px;
   background-color: #ffffff;
-  border: black 1px;
   
 }
 
@@ -263,4 +274,12 @@ li:nth-child(odd) { background:#d8c3a5; }
 
 .SmallFont {
   font-size: 16px;
+}
+
+.Republican {
+  margin-right: 20px;
+}
+
+.Democrate {
+  margin-left: 20px;
 }

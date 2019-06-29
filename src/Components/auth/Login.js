@@ -79,9 +79,9 @@ return (
                   value={Email}
                   error={errors.Email}
                   id="Email"
-                  type="Email"
+                  type="email"
                 />
-                <label htmlFor="Email">Email</label>
+                <label htmlFor="email">Email</label>
               </div>
               <div className="input-field col s12">
                 <input
@@ -89,9 +89,9 @@ return (
                   value={Password}
                   error={errors.Password}
                   id="Password"
-                  type="Password"
+                  type="password"
                 />
-                <label htmlFor="Password">Password</label>
+                <label htmlFor="password">Password</label>
               </div>
               <div className="col s12" style={{ paddingLeft: "11.250px" }}>
                 <button

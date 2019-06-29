@@ -50,8 +50,8 @@ class SignUp extends Component {
       Email: this.state.Email,
       Password: this.state.Password,
     };
-    
-    console.log('newUser: ', newUser)
+
+    // console.log('newUser: ', newUser)
     this.props.signupUser(newUser, this.props.history); 
   };
 
@@ -88,7 +88,7 @@ return (
                 <input
                   onChange={this.onChange}
                   value={LastName}
-                  error={errors.lastname}
+                  error={errors.LastName}
                   id="LastName"
                   type="text"
                   // className={classnames("", {

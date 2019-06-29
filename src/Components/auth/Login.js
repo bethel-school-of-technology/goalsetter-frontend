@@ -58,7 +58,6 @@ render() {
     const { errors, Email, Password } = this.state;
 return (
       <Container className="Login">
-        <Header title />
         <h2>Login</h2>
             {/* <Link to="/" className="btn-flat waves-effect">
               <i className="material-icons left">keyboard_backspace</i> Back to

@@ -51,7 +51,7 @@ class SignUp extends Component {
       Password: this.state.Password,
     };
     
-    console.log('newUser: ', newUser)
+    // console.log('newUser: ', newUser)
     this.props.signupUser(newUser, this.props.history); 
   };
 
@@ -60,7 +60,6 @@ render() {
     
 return (
       <Container className="Home">
-        <Header title />
         <h2>Sign Up</h2>
             {/* <Link to="/" className="btn-flat waves-effect">
               <i className="material-icons left">keyboard_backspace</i> Back to

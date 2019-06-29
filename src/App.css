@@ -260,3 +260,7 @@ li:nth-child(odd) { background:#d8c3a5; }
   margin: 6px 0 13px 0;
   width: 100%;
 }
+
+.SmallFont {
+  font-size: 16px;
+}

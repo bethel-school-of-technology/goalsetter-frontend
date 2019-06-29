@@ -17,7 +17,7 @@ import Users from './pages/Users';
 
 import Goals from './pages/Goals';
 // import ProfileGoals from './Components/profileGoals';
-// import Account from './pages/Account';
+import Account from './pages/Account';
 import SignUp from './Components/auth/SignUp';
 import Login from './Components/auth/Login';
 import Home from './Components/layout/Home';
@@ -55,6 +55,7 @@ class App extends Component {
           <Route exact path="/goals" component={Goals} />
           <Switch>
               <PrivateRoute exact path="/profile" component={Profile}  />
+              <PrivateRoute exact path="/Account" component={Account}  />
             </Switch>
         </div>
       </Router>

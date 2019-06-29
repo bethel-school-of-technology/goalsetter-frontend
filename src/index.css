@@ -12,12 +12,12 @@ code {
     monospace;
 }
 
-.a { 
-  color:#ffffff !important; 
+a { 
+  color:#d8c3a5 !important; 
 }
 
 a:hover {
-  color: #d8c3a5 !important;
+  color: #ffffff !important;
   text-decoration: none !important;
 }
 
@@ -70,4 +70,10 @@ a:hover {
   
 } */
 
+
+.Login {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 

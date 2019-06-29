@@ -17,7 +17,6 @@ export default class Profile extends Component {
       return (
         <div>
           <Container className="App">
-           <Header title />
            <AddGoal />
            <ProfileGoals uri="http://localhost:3001/goals" />
         </Container>

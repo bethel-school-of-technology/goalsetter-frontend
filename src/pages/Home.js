@@ -15,10 +15,10 @@ import { Link } from 'react-router-dom';
 
 export default class Home extends Component {
     state = {
-      firstName: '',
-      lastName: '',
-      email: '',
-      password: '',
+      FirstName: '',
+      LastName: '',
+      Email: '',
+      Password: '',
       errMessage: ''
     }
 
@@ -28,13 +28,13 @@ export default class Home extends Component {
 
     createUser =  async e => {
       this.setState({ loading: true })
-      const { firstName, lastName, email, password } = this.state;
+      const { FirstName, LastName, Email, Password } = this.state;
 
       const bodyFormData = {
-        FirstName: firstName,
-        LastName: lastName,
-        Email: email,
-        Password: password,
+        FirstName: FirstName,
+        LastName: LastName,
+        Email: Email,
+        Password: Password,
         redirect: false,
       }
 
@@ -83,7 +83,7 @@ export default class Home extends Component {
             <Label>First Name:</Label>
             <Input
               type="text"
-              name="firstName"
+              name="FirstName"
               id="FirstName"
               placeholder="First Name"
               onChange={this.onChange}
@@ -95,7 +95,7 @@ export default class Home extends Component {
             <Label>Last Name</Label>
             <Input
               type="text"
-              name="lastName"
+              name="LastName"
               id="LastName"
               placeholder="Last Name"
               onChange={this.onChange}
@@ -106,8 +106,8 @@ export default class Home extends Component {
           <FormGroup>
             <Label>Email</Label>
             <Input
-              type="Email"
-              name="email"
+              type="email"
+              name="Email"
               id="Email"
               placeholder="myemail@email.com"
               onChange={this.onChange}
@@ -119,7 +119,7 @@ export default class Home extends Component {
             <Label for="email">Password</Label>
             <Input
               type="password"
-              name="password"
+              name="Password"
               id="Password"
               placeholder="********"
               onChange={this.onChange}

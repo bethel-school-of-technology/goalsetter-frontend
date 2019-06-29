@@ -87,7 +87,7 @@ return (
                 <input
                   onChange={this.onChange}
                   value={LastName}
-                  error={errors.lastname}
+                  error={errors.LastName}
                   id="LastName"
                   type="text"
                   // className={classnames("", {

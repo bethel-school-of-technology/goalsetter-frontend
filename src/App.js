@@ -7,16 +7,8 @@ import { setCurrentUser, logoutUser } from "./actions/authActions";
 
 import { Provider } from "react-redux";
 import store from "./store";
-//import Goals from './components/Goals';
-
-// import Login from './pages/Login';
 import Users from './pages/Users';
-// import Home from './pages/Home';
-//import Profile from './pages/Profile';
-//import 'bootstrap/dist/css/bootstrap.min.css';
-
 import Goals from './pages/Goals';
-// import ProfileGoals from './Components/profileGoals';
 import Account from './pages/Account';
 import SignUp from './Components/auth/SignUp';
 import Login from './Components/auth/Login';

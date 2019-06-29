@@ -59,10 +59,6 @@ render() {
 return (
       <Container className="Login">
         <h2>Login</h2>
-            {/* <Link to="/" className="btn-flat waves-effect">
-              <i className="material-icons left">keyboard_backspace</i> Back to
-              home
-            </Link> */}
             <div className="col s12" style={{ paddingLeft: "11.250px" }}>
               {/* <h4>
                 <b>Login</b> below
@@ -76,8 +72,15 @@ return (
                   error={errors.Email}
                   id="Email"
                   type="email"
+                  className={classnames("", {
+                    invalid: errors.Email || errors.emailnotfound
+                  })}
                 />
                 <label htmlFor="email">Email</label>
+                <span className="red-text">
+                  {errors.Email}
+                  {errors.emailnotfound}
+                </span>
               </div>
               <div className="input-field col s12">
                 <input
@@ -86,22 +89,26 @@ return (
                   error={errors.Password}
                   id="Password"
                   type="password"
+                  className={classnames("", {
+                    invalid: errors.Password || errors.passwordincorrect
+                  })}
                 />
-                <label htmlFor="password">Password</label>
+                <label htmlFor="Password">Password</label>
+                <span className="red-text">
+                  {errors.Password}
+                  {errors.passwordincorrect}
+                </span>
               </div>
               <div className="col s12" style={{ paddingLeft: "11.250px" }}>
-                <button
+                <Button className="GSColor"
                   style={{
                     width: "150px",
                     borderRadius: "3px",
                     letterSpacing: "1.5px",
                     marginTop: "1rem"
                   }}
-                  type="submit"
-                  className="btn btn-large waves-effect waves-light hoverable blue accent-3"
-                >
-                  Login
-                </button>
+                  type="submit">Login
+                </Button>
               </div>
             </form>
             </Container>

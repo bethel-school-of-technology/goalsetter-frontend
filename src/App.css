@@ -265,6 +265,13 @@ li:nth-child(odd) { background:#d8c3a5; }
   -webkit-appearance: none;
 }
 
+.GSColor {
+  background-color: #d8c3a5 !important;
+  border-color: #d8c3a5 !important;
+}
+.GSColor:hover {
+  background-color: #e85a4f;
+}
 
 .external-container button.external-button {
   font-weight: 400;

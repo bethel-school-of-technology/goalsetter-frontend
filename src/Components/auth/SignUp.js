@@ -60,10 +60,6 @@ render() {
 return (
       <Container className="Home">
         <h2>Sign Up</h2>
-            {/* <Link to="/" className="btn-flat waves-effect">
-              <i className="material-icons left">keyboard_backspace</i> Back to
-              home
-            </Link> */}
             <div className="col s12" style={{ paddingLeft: "11.250px" }}>
             </div>
             <form noValidate onSubmit={this.onSubmit}>
@@ -74,11 +70,13 @@ return (
                   error={errors.FirstName}
                   id="FirstName"
                   type="text"
-                  // className={classnames("", {
-                  //   invalid:error.firstname
-                  // })}
+                  className={classnames("", {
+                    invalid:errors.FirstName
+                  })}
                 />
-                <label htmlFor="firstname">First Name</label>         </div>
+                <label htmlFor="FirstName">First Name</label> 
+                <span className="red-text">{errors.FirstName}</span>        
+                </div>
               <div className="input-field col s12">
                 <input
                   onChange={this.onChange}
@@ -86,11 +84,12 @@ return (
                   error={errors.LastName}
                   id="LastName"
                   type="text"
-                  // className={classnames("", {
-                  //   invalid: errors.lastname
-                  // })}
+                  className={classnames("", {
+                    invalid: errors.LastName
+                  })}
                 />
-                <label htmlFor="lastname">Last Name</label>
+                <label htmlFor="LastName">Last Name</label>
+                <span className="red-text">{errors.LastName}</span>
               </div>
               <div className="input-field col s12">
                 <input
@@ -99,11 +98,12 @@ return (
                   error={errors.Email}
                   id="Email"
                   type="email"
-                  // className={classnames("", {
-                  //   invalid: errors.email
-                  // })}
+                  className={classnames("", {
+                    invalid: errors.Email
+                  })}
                 />
-                <label htmlFor="email">Email</label>
+                <label htmlFor="Email">Email</label>
+                <span className="red-text">{errors.Email}</span>
               </div>
               <div className="input-field col s12">
                 <input
@@ -112,11 +112,12 @@ return (
                   error={errors.password}
                   id="Password"
                   type="password"
-                  // className={classnames("", {
-                  //   invalid: errors.password
-                  // })}
+                  className={classnames("", {
+                    invalid: errors.Password
+                  })}
                 />
-                <label htmlFor="password">Password</label>
+                <label htmlFor="Password">Password</label>
+                <span className="red-text">{errors.Password}</span>
               </div>
               <div className="col s12" style={{ paddingLeft: "11.250px" }}>
                 <button
@@ -127,9 +128,7 @@ return (
                     marginTop: "1rem"
                   }}
                   type="submit"
-                  // className="btn btn-large waves-effect waves-light hoverable blue accent-3"
-                >
-                  Sign up
+                >Sign up
                 </button>
               </div>
             </form>

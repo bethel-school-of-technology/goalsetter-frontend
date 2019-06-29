@@ -12,7 +12,16 @@ class Home extends Component {
     return (
       <div className="Header">
        <a href="/profile"><h1 className="white" >GOALSetter</h1></a>
-       <div className="SmallFont"><Link className="Republican" to="/signup">Sign Up</Link><Link className="Green" to="/login">Login</Link><Link className="Democrate" to="/Account">Account</Link></div>
+       <div className="SmallFont">
+         {/* if (localStorage.getItem('jwtToken')){
+          <Link className="Republican" to="/signout">Sign Out</Link>
+         } else { */}
+          <Link className="Republican" to="/signup">Sign Up</Link>
+         {/* } */}
+         
+         <Link className="Green" to="/login">Login</Link>
+         <Link className="Democrate" to="/Account">Account</Link>
+         </div>
       </div>
       // <div style={{ height: "0vh" }} className="container valign-wrapper">
       //   <div className="row">

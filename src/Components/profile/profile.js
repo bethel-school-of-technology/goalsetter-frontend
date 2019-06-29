@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { loginUser } from "../../actions/authActions";
 import classnames from "classnames";
+
 import AddGoal from "../AddGoal";
 import ProfileGoals from "../profileGoals";
 import {
@@ -28,7 +29,7 @@ class Profile extends Component {
 
   setCurrentUser(nextProps) {
     if (nextProps.auth.isAuthenticated) {
-      this.props.history.push("/profile/" + this.Id); // push user to dashboard when they login
+      this.props.history.push("/profile/"); // push user to profile when they login
     }
 if (nextProps.errors) {
       this.setState({
@@ -38,12 +39,14 @@ if (nextProps.errors) {
   }
 
 render() {
+    console.log("PROPS:", this.props);
     const { errors, Email, Password } = this.state;
+    const uriString = "http://localhost:3001/goals/"+this.props.auth.user.id;
 return (
     <div>
       <Container className="App">
        <AddGoal />
-       <ProfileGoals uri="http://localhost:3001/goals" />
+       <ProfileGoals uri={uriString} />
     </Container>
     </div>
 

@@ -61,26 +61,36 @@ export const logoutUser = () => dispatch => {
   dispatch(setCurrentUser({}));
 };
 
-// Login - get user token
-export const goalCreate = goalData => dispatch => {
+// Create Goal
+export const createGoal = (userData, history) => dispatch => {
   axios
-    .post("http://localhost:3001/goals", goalData)
-    .then(res => {
-      // Save to localStorage
-      // Set token to localStorage
-      const { token } = res.data;
-      localStorage.setItem("jwtToken", token);
-      // Set token to Auth header
-      setAuthToken(token);
-      // Decode token to get user data
-      const decoded = jwt_decode(token);
-      // Set current user
-      dispatch(setCurrentUser(decoded));
-    })
+    .post("http://localhost:3001/goals", userData)
+    .then(res => history.push("/profile")) // re-direct to login on successful signup
     .catch(err =>
-      dispatch({
-        type: GET_ERRORS,
-        payload: err.response.data
-      })
+     console.log(err)
     );
 };
+
+// Login - get user token
+// export const goalCreate = goalData => dispatch => {
+//   axios
+//     .post("http://localhost:3001/goals", goalData)
+//     .then(res => {
+//       // Save to localStorage
+//       // Set token to localStorage
+//       const { token } = res.data;
+//       localStorage.setItem("jwtToken", token);
+//       // Set token to Auth header
+//       setAuthToken(token);
+//       // Decode token to get user data
+//       const decoded = jwt_decode(token);
+//       // Set current user
+//       dispatch(setCurrentUser(decoded));
+//     })
+//     .catch(err =>
+//       dispatch({
+//         type: GET_ERRORS,
+//         payload: err.response.data
+//       })
+//     );
+// };

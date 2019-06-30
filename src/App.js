@@ -7,7 +7,6 @@ import { setCurrentUser, logoutUser } from "./actions/authActions";
 
 import { Provider } from "react-redux";
 import store from "./store";
-import Users from './pages/Users';
 import Goals from './pages/Goals';
 import Account from './pages/Account';
 import SignUp from './Components/auth/SignUp';
@@ -44,10 +43,11 @@ class App extends Component {
           <Home />
           <Route exact path="/signup" component={SignUp} />
           <Route exact path="/login" component={Login} />
-          <Route exact path="/goals" component={Goals} />
+          
           <Switch>
               <PrivateRoute exact path="/profile" component={Profile}  />
               <PrivateRoute exact path="/Account" component={Account}  />
+              <PrivateRoute exact path="/goals" component={Goals} />
             </Switch>
         </div>
       </Router>

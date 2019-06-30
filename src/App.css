@@ -60,7 +60,9 @@
 
 .Flower {
   background-color: #282c34;
-  margin: 2px;
+  margin-bottom: 2px;
+  margin-right: 10px;
+  margin-left: 10px;
   min-height: 7vh;
   display: flex;
   flex-direction: column;

@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { loginUser } from "../../actions/authActions";
 import classnames from "classnames";
-import Header from  '../../Components/Header';
 import {
   Container, Col, Form,
   FormGroup, Label, Input,
@@ -45,7 +44,7 @@ onChange = e => {
   };
 onSubmit = e => {
     e.preventDefault();
-const userData = {
+      const userData = {
       Email: this.state.Email,
       Password: this.state.Password
     };

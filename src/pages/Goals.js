@@ -24,6 +24,17 @@ class Goals extends Component {
         
       };
     }
+
+    componentWillReceiveProps(nextProps) {
+      if (nextProps.auth.isAuthenticated) {
+        this.props.history.push("/profile"); // push user to dashboard when they login
+      }
+  if (nextProps.errors) {
+        this.setState({
+          errors: nextProps.errors
+        });
+      }
+    }
   
     setCurrentUser(nextProps) {
       if (nextProps.auth.isAuthenticated) {
@@ -42,11 +53,16 @@ class Goals extends Component {
         Goal: this.state.Goal,
         DateFinished: this.state.DateFinished,
         Notes: this.state.Notes,
-        userId: this.props.auth.id,
+        userId: this.props.auth.user.id,
       };
+      // console.log("NEW GOAL", newGoal);
+      
       this.props.createGoal(newGoal, this.props.history); 
     };
 
+    onChange = e => {
+      this.setState({ [e.target.id]: e.target.value });
+    };
   
  
  render () {
@@ -54,7 +70,26 @@ class Goals extends Component {
     const { Goal, DateFinished, Notes, userId} = this.state;
     return (
       <div>
-   <Form id="goals" name="goals" method="POST" action="/goals" onSubmit={this.onSubmit}>
+        <form noValidate onSubmit={this.onSubmit}>
+        <div className="input-field col s12">
+          <input type="hidden" name="userId" value={this.props.auth.user.id} />
+        </div>
+        <div>
+          <label htmlFor="Goal">Goal</label>
+          <input onChange={this.onChange} type="text" name="Goal" value={Goal} id="Goal" placeholder="What's Your Goal?" />
+        </div>
+        <div>
+          <label htmlFor="DateFinished">DateFinished</label>
+          <input onChange={this.onChange} type="date" name="DateFinished" id="DateFinished" value={DateFinished} placeholder="When's Your Goal Date?" />
+        </div>
+        <div>
+          <label htmlFor="Notes">Notes</label>
+          <input onChange={this.onChange} type="textarea" name="Notes" id="Notes" value={Notes} placeholder="Tell us more about your goal" />
+        </div>
+        <button type="submit">Submit</button>
+        </form>
+   {/* <Form id="goals" name="goals" method="POST" action="/goals">
+    <Input type="hidden" name="userId" value={this.props.auth.user.id} />
      <Col className="topMargin">
        <FormGroup>
          <Label className="colorRed">Goal:</Label>
@@ -96,7 +131,7 @@ class Goals extends Component {
        </FormGroup>
      </Col>
      <Button component={Link} to="/Users">Submit</Button>
-   </Form>
+   </Form> */}
 
 
    </div>
@@ -117,5 +152,5 @@ const mapStateToProps = state => ({
 });
 export default connect(
   mapStateToProps,
-  { loginUser }
+  { createGoal }
 )(Goals);

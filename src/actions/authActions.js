@@ -6,6 +6,10 @@ import {
   SET_CURRENT_USER,
   USER_LOADING
 } from "./types";
+
+
+
+
 // Register User
 export const signupUser = (userData, history) => dispatch => {
   axios
@@ -59,6 +63,17 @@ export const logoutUser = () => dispatch => {
   setAuthToken(false);
   // Set current user to empty object {} which will set isAuthenticated to false
   dispatch(setCurrentUser({}));
+};
+
+// Delete user 
+export const deleteUser = (history) => dispatch => {
+  console.log("CALLING DELETE FUNCTION")
+  axios
+    .delete("http://localhost:3001/users/deleteuser")
+    .then(res => history.push("/signup")) // re-direct to signup on successful delete
+    .catch(err =>
+     console.log(err)
+    );
 };
 
 // Create Goal

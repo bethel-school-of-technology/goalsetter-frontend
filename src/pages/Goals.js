@@ -142,7 +142,8 @@ class Goals extends Component {
 }
 
 Goals.propTypes = {
-  loginUser: PropTypes.func.isRequired,
+  
+  createGoal: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
   errors: PropTypes.object.isRequired
 };

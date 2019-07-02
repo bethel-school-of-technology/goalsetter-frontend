@@ -49,7 +49,7 @@ class App extends Component {
               <PrivateRoute exact path="/profile" component={Profile}  />
               <PrivateRoute exact path="/Account" component={Account}  />
               <PrivateRoute exact path="/goals" component={Goals} />
-              <PrivateRoute exact path="/specificgoal/:GoalId(\d+)" component={SpecificGoal} />
+              <PrivateRoute exact path="/specificgoal" component={SpecificGoal} />
             </Switch>
         </div>
       </Router>

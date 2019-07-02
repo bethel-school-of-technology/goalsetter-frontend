@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { loginUser } from "../../actions/authActions";
 import AddGoal from "../AddGoal";
 import ProfileGoals from "../profileGoals";
+import axios from 'axios';
 
 
 class Profile extends Component {
@@ -19,7 +20,7 @@ class Profile extends Component {
     };
   }
 
-  setCurrentUser(nextProps) {
+setCurrentUser(nextProps) {
     if (nextProps.auth.isAuthenticated) {
       this.props.history.push("/profile/"); // push user to profile when they login
     }
@@ -31,8 +32,6 @@ if (nextProps.errors) {
   }
 
 render() {
-    console.log("PROPS:", this.props);
-    // const { errors, Email, Password } = this.state;
     const uriString = "http://localhost:3001/goals/"+this.props.auth.user.id;
 return (
     <div>

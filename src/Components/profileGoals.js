@@ -7,11 +7,11 @@ class ProfileGoals extends React.Component {
   state = {
     goalData: []
   };
+  
 
   fetchGoalData = () => {
     var encodedURI = window.encodeURI(this.props.uri);
     return axios.get(encodedURI).then(response => {
-      console.log("response", response);
       this.setState(() => {
         return {
           goalData: response.data
@@ -21,7 +21,6 @@ class ProfileGoals extends React.Component {
         const gDate = new Date(gd.DateFinished);
         gd.DateFinished = new Intl.DateTimeFormat('en-US').format(gDate); // 6/4/2019
       });
-      console.log("CURRENT STATE", this.state);
     });
   };
 
@@ -30,10 +29,10 @@ class ProfileGoals extends React.Component {
   }
 
   render() {
-    console.log("WHAT IS THIS:", this.state.goalData);
     if (this.state.goalData.length === 0) {
       return <div>Failed to fetch data from server</div>;
     }
+    
     const goals = this.state.goalData.map(goal => (
       // const goalDate = new Date(goal.DateFinished);
 <div 

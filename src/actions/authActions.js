@@ -90,6 +90,17 @@ export const createGoal = (newGoal, history) => dispatch => {
     );
 };
 
+// Create Goal
+export const updateGoal = (updateGoalDetails, history) => dispatch => {
+  console.log("CALLING CREATE GOAL FUNCTION!");
+  axios
+    .put("http://localhost:3001/goals", updateGoalDetails)
+    .then(res => history.push("/profile")) // re-direct to login on successful signup
+    .catch(err =>
+     console.log(err)
+    );
+};
+
 
 // Set Goal Details
 export const setGoalDetails = goalDetails => dispatch => {

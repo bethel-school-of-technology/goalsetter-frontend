@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { logoutUser, deleteUser, setCurrentUser} from "../actions/authActions";
 import { Button } from 'reactstrap';
 import axios from 'axios';
+import setAuthToken from "../utils/setAuthToken";
 
 
 class Account extends Component {
@@ -12,14 +13,11 @@ class Account extends Component {
     this.props.logoutUser();
   };
 
-  onSubmit = (history) => {
+  onSubmit = (e) =>  {
     console.log("CALLING DELETE FUNCTION")
-    axios
-      .delete(`http://localhost:3001/users/${this.props.auth.user.id}`)
-    //   .then(logoutUser(true)) // re-direct to login on successful signup
-    // .catch(err =>
-    //  console.log(err)
-    // );
+    axios.delete(`http://localhost:3001/users/${this.props.auth.user.id}`)
+    e.preventDefault();
+    this.props.logoutUser();
   };
 
 render() {

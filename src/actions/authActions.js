@@ -4,7 +4,8 @@ import jwt_decode from "jwt-decode";
 import {
   GET_ERRORS,
   SET_CURRENT_USER,
-  USER_LOADING
+  USER_LOADING,
+  SET_CURRENT_GOAL
 } from "./types";
 
 
@@ -66,14 +67,16 @@ export const logoutUser = () => dispatch => {
 };
 
 // Delete user 
-export const deleteUser = (history) => dispatch => {
+export const deleteUser = (deleteUserInfo) => dispatch => {
   console.log("CALLING DELETE FUNCTION")
   axios
-    .delete("http://localhost:3001/users/deleteuser")
-    .then(res => history.push("/signup")) // re-direct to signup on successful delete
-    .catch(err =>
-     console.log(err)
-    );
+    .delete(`http://localhost:3001/users/:Id`, deleteUserInfo)
+    // Remove token from local storage
+  localStorage.removeItem("jwtToken");
+  // Remove auth header for future requests
+  setAuthToken(false);
+  // Set current user to empty object {} which will set isAuthenticated to false
+  dispatch(setCurrentUser({}))
 };
 
 // Create Goal
@@ -87,3 +90,34 @@ export const createGoal = (newGoal, history) => dispatch => {
     );
 };
 
+
+// Set Goal Details
+export const setGoalDetails = goalDetails => dispatch => {
+  axios
+    .get("http://localhost:3001/goals", goalDetails)
+    .then(res => {
+      // Save to localStorage
+      // Set token to localStorage
+      const { goalToken } = res.data;
+      localStorage.setItem("goalInfo", goalToken);
+      // Set token to Auth header
+      setAuthToken(goalToken);
+      // Decode token to get user data
+      const decoded = jwt_decode(goalToken);
+      // Set current user
+      dispatch(setCurrentGoal(decoded));
+    })
+    .catch(err =>
+      dispatch({
+        type: GET_ERRORS,
+        payload: err.response.data
+      })
+    );
+};
+// Set logged in user
+export const setCurrentGoal = decoded => {
+  return {
+    type: SET_CURRENT_GOAL,
+    payload: decoded
+  };
+};

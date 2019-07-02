@@ -3,7 +3,6 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 
-
 class ProfileGoals extends React.Component {
   state = {
     goalData: []
@@ -31,7 +30,7 @@ class ProfileGoals extends React.Component {
   }
 
   render() {
-    console.log(this.state.goalData);
+    console.log("WHAT IS THIS:", this.state.goalData);
     if (this.state.goalData.length === 0) {
       return <div>Failed to fetch data from server</div>;
     }
@@ -39,8 +38,8 @@ class ProfileGoals extends React.Component {
       // const goalDate = new Date(goal.DateFinished);
 <div 
 key={goal.Goal}> 
- <a href="/specificGoal"><li className="Flower">{goal.Goal} : { goal.DateFinished }</li>  </a>
-        </div>
+ <Link to={`/specificgoal`}> <li className="Flower">{goal.Goal} : { goal.DateFinished }</li></Link>
+</div>
       
 
     ));

@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { signupUser } from '../../actions/authActions';
 import classnames from 'classnames';
-import {
-  Container, Col, Form,
-  FormGroup, Label, Input,
-  Button,
-} from 'reactstrap';
+import { Container } from 'reactstrap';
 
 class SignUp extends Component {
   constructor() {

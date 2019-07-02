@@ -1,12 +1,9 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { logoutUser, deleteUser } from "../actions/authActions";
-import {
-  Container, Col, Form,
-  FormGroup, Label, Input,
-  Button,
-} from 'reactstrap';
+import { logoutUser, deleteUser, setCurrentUser} from "../actions/authActions";
+import { Button } from 'reactstrap';
+import axios from 'axios';
 
 
 class Account extends Component {
@@ -15,21 +12,15 @@ class Account extends Component {
     this.props.logoutUser();
   };
 
-  onSubmit = e => {
-    e.preventDefault();
-    const deleteUserInfo = {
-       userId: this.props.auth.user.id,
-    };
-    // console.log("NEW GOAL", newGoal);
-    
-    this.props.deleteUser(deleteUserInfo, this.props.history); 
+  onSubmit = (history) => {
+    console.log("CALLING DELETE FUNCTION")
+    axios
+      .delete(`http://localhost:3001/users/${this.props.auth.user.id}`)
+    //   .then(logoutUser(true)) // re-direct to login on successful signup
+    // .catch(err =>
+    //  console.log(err)
+    // );
   };
-
-  onChange = e => {
-    this.setState({ [e.target.id]: e.target.value });
-  };
-
-
 
 render() {
 

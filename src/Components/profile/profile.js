@@ -1,17 +1,9 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { loginUser } from "../../actions/authActions";
-import classnames from "classnames";
-
 import AddGoal from "../AddGoal";
 import ProfileGoals from "../profileGoals";
-import {
-  Container, Col, Form,
-  FormGroup, Label, Input,
-  Button,
-} from 'reactstrap';
 
 
 class Profile extends Component {
@@ -40,7 +32,7 @@ if (nextProps.errors) {
 
 render() {
     console.log("PROPS:", this.props);
-    const { errors, Email, Password } = this.state;
+    // const { errors, Email, Password } = this.state;
     const uriString = "http://localhost:3001/goals/"+this.props.auth.user.id;
 return (
     <div>

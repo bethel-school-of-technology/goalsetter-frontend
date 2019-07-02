@@ -14,6 +14,7 @@ import Login from './Components/auth/Login';
 import Home from './Components/layout/Home';
 import PrivateRoute from './Components/private-route/PrivateRoute';
 import Profile from './Components/profile/profile';
+import SpecificGoal from './pages/SpecificGoal';
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -48,6 +49,7 @@ class App extends Component {
               <PrivateRoute exact path="/profile" component={Profile}  />
               <PrivateRoute exact path="/Account" component={Account}  />
               <PrivateRoute exact path="/goals" component={Goals} />
+              <PrivateRoute exact path="/specificgoal/:GoalId(\d+)" component={SpecificGoal} />
             </Switch>
         </div>
       </Router>

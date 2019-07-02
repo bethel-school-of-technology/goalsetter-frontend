@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
-import {
- Container, Col, Form,
+import { Col, Form,
  FormGroup, Label, Input,
  Button,
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { loginUser } from "../actions/authActions";
-import classnames from 'classnames';
 import { createGoal } from "../actions/authActions";
 
 
@@ -67,10 +64,10 @@ class Goals extends Component {
  
  render () {
     console.log("PROPS:", this.props);
-    const { Goal, DateFinished, Notes, userId} = this.state;
+    const { Goal, DateFinished, Notes } = this.state;
     return (
       <div>
-        <form noValidate onSubmit={this.onSubmit}>
+        {/* <form noValidate onSubmit={this.onSubmit}>
         <div className="input-field col s12">
           <input type="hidden" name="userId" value={this.props.auth.user.id} />
         </div>
@@ -87,8 +84,8 @@ class Goals extends Component {
           <input onChange={this.onChange} type="textarea" name="Notes" id="Notes" value={Notes} placeholder="Tell us more about your goal" />
         </div>
         <button type="submit">Submit</button>
-        </form>
-   {/* <Form id="goals" name="goals" method="POST" action="/goals">
+        </form> */}
+   <Form noValidate onSubmit={this.onSubmit}>
     <Input type="hidden" name="userId" value={this.props.auth.user.id} />
      <Col className="topMargin">
        <FormGroup>
@@ -131,7 +128,7 @@ class Goals extends Component {
        </FormGroup>
      </Col>
      <Button component={Link} to="/Users">Submit</Button>
-   </Form> */}
+   </Form>
 
 
    </div>

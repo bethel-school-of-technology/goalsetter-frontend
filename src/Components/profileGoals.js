@@ -2,16 +2,35 @@ import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-
 class ProfileGoals extends React.Component {
   state = {
     goalData: []
   };
   
 
+  // fetchGoalData = () => {
+  //   var encodedURI = window.encodeURI(this.props.uri);
+  //   return axios.get(encodedURI).then(response => {
+  //     this.setState(() => {
+  //       return {
+  //         goalData: response.data
+  //       };
+  //     });
+  //     this.state.goalData.forEach(gd => {
+  //       const gDate = new Date(gd.DateFinished);
+  //       gd.DateFinished = new Intl.DateTimeFormat('en-US').format(gDate); // 6/4/2019
+  //     });
+  //   });
+  // };
+
+  // componentDidMount() {
+  //   this.fetchGoalData();
+  //   console.log("PROPS:", this.props)
+  // }
+
   fetchGoalData = () => {
-    var encodedURI = window.encodeURI(this.props.uri);
-    return axios.get(encodedURI).then(response => {
+    
+    axios.get(`http://localhost:3001/goals`).then(response => {
       this.setState(() => {
         return {
           goalData: response.data
@@ -26,7 +45,9 @@ class ProfileGoals extends React.Component {
 
   componentDidMount() {
     this.fetchGoalData();
+    console.log("PROPS:", this.props)
   }
+
 
   render() {
     if (this.state.goalData.length === 0) {
@@ -37,7 +58,7 @@ class ProfileGoals extends React.Component {
       // const goalDate = new Date(goal.DateFinished);
 <div 
 key={goal.Goal}> 
- <Link to={`/specificgoal`}> <li className="Flower">{goal.Goal} : { goal.DateFinished }</li></Link>
+ <Link to={`/specificgoal/${goal.GoalId}`}> <li className="Flower">{goal.Goal} : { goal.DateFinished }</li></Link>
 </div>
       
 

@@ -5,7 +5,7 @@ class Home extends Component {
   render() {
     return (
       <div className="Header">
-       <a href="/profile"><h1 className="white" >GOALSetter</h1></a>
+       <a href="/goals"><h1 className="white" >GOALSetter</h1></a>
        <div className="SmallFont">
          {/* if (localStorage.getItem('jwtToken')){
           <Link className="Republican" to="/signout">Sign Out</Link>

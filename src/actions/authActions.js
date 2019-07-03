@@ -84,7 +84,7 @@ export const createGoal = (newGoal, history) => dispatch => {
   console.log("CALLING CREATE GOAL FUNCTION!");
   axios
     .post("http://localhost:3001/goals", newGoal)
-    .then(res => history.push("/profile")) // re-direct to login on successful signup
+    .then(res => history.push("/goals")) // re-direct to login on successful signup
     .catch(err =>
      console.log(err)
     );
@@ -95,7 +95,7 @@ export const updateGoal = (updateGoalDetails, history) => dispatch => {
   console.log("CALLING CREATE GOAL FUNCTION!");
   axios
     .put("http://localhost:3001/goals", updateGoalDetails)
-    .then(res => history.push("/profile")) // re-direct to login on successful signup
+    .then(res => history.push("/goals")) // re-direct to login on successful signup
     .catch(err =>
      console.log(err)
     );
@@ -131,4 +131,17 @@ export const setCurrentGoal = decoded => {
     type: SET_CURRENT_GOAL,
     payload: decoded
   };
+};
+
+
+
+// Get Specific Goal
+export const getSpecificGoal = (specificGoal, history) => dispatch => {
+  console.log("getting Specific Goal!");
+  axios
+    .get("http://localhost:3001/goals", specificGoal)
+    .then(res => history.push("/goals")) // re-direct to login on successful signup
+    .catch(err =>
+     console.log(err)
+    );
 };

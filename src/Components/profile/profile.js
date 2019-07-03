@@ -8,36 +8,39 @@ import axios from 'axios';
 
 
 class Profile extends Component {
-  constructor() {
-    super();
-    this.state = {
-      Id: "",
-      FirstName: "",
-      LastName: "",
-      Email: "",
-      Password: "",
-      errors: {}
-    };
-  }
+//   constructor() {
+//     super();
+//     this.state = {
+//       Id: "",
+//       FirstName: "",
+//       LastName: "",
+//       Email: "",
+//       Password: "",
+//       errors: {}
+//     };
+//   }
 
-setCurrentUser(nextProps) {
-    if (nextProps.auth.isAuthenticated) {
-      this.props.history.push("/profile/"); // push user to profile when they login
-    }
-if (nextProps.errors) {
-      this.setState({
-        errors: nextProps.errors
-      });
-    }
-  }
+// setCurrentUser(nextProps) {
+//     if (nextProps.auth.isAuthenticated) {
+//       this.props.history.push("/profile/"); // push user to profile when they login
+//     }
+// if (nextProps.errors) {
+//       this.setState({
+//         errors: nextProps.errors
+//       });
+//     }
+//   }
 
 render() {
-    const uriString = "http://localhost:3001/goals/"+this.props.auth.user.id;
+    console.log('PROPS:', this.props);
+    const { user } = this.props.auth;
+    // const uriString = "http://localhost:3001/goals/"+this.props.auth.user.id;
 return (
     <div>
       <div className="App">
        <AddGoal />
-       <ProfileGoals uri={uriString} />
+       {/* <ProfileGoals uri={uriString} /> */}
+       <ProfileGoals />
     </div>
     </div>
 

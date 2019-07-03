@@ -6,8 +6,6 @@ class ProfileGoals extends React.Component {
   state = {
     goalData: []
   };
-  
-
   // fetchGoalData = () => {
   //   var encodedURI = window.encodeURI(this.props.uri);
   //   return axios.get(encodedURI).then(response => {
@@ -29,7 +27,6 @@ class ProfileGoals extends React.Component {
   // }
 
   fetchGoalData = () => {
-    
     axios.get(`http://localhost:3001/goals`).then(response => {
       this.setState(() => {
         return {
@@ -53,14 +50,14 @@ class ProfileGoals extends React.Component {
     if (this.state.goalData.length === 0) {
       return <div>Failed to fetch data from server</div>;
     }
-    
+
     const goals = this.state.goalData.map(goal => (
       // const goalDate = new Date(goal.DateFinished);
-<div 
-key={goal.Goal}> 
- <Link to={`/specificgoal/${goal.GoalId}`}> <li className="Flower">{goal.Goal} : { goal.DateFinished }</li></Link>
-</div>
-      
+      <div
+        key={goal.Goal}>
+        <Link to={`/goals/${goal.GoalId}`}> <li className="Flower">{goal.Goal} : {goal.DateFinished}</li></Link>
+      </div>
+
 
     ));
     return <div>{goals}</div>;

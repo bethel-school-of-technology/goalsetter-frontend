@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import { logoutUser, deleteUser, setCurrentUser} from "../actions/authActions";
 import { Button } from 'reactstrap';
 import axios from 'axios';
-import setAuthToken from "../utils/setAuthToken";
 
 
 class Account extends Component {

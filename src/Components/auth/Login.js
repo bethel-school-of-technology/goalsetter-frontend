@@ -3,7 +3,11 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { loginUser } from "../../actions/authActions";
 import classnames from "classnames";
-import { Container, Button } from 'reactstrap';
+import {
+  Container, Col, Form,
+  FormGroup, Label, Input,
+  Button,
+} from 'reactstrap';
 
 
 class Login extends Component {
@@ -58,9 +62,11 @@ return (
                 <b>Login</b> below
               </h4> */}
             </div>
-            <form noValidate onSubmit={this.onSubmit}>
+            <Form noValidate onSubmit={this.onSubmit}>
+              <FormGroup>
               <div className="input-field col s12">
-                <input
+                <Label htmlFor="email">Email</Label>
+                <Input
                   onChange={this.onChange}
                   value={Email}
                   error={errors.Email}
@@ -70,14 +76,14 @@ return (
                     invalid: errors.Email || errors.emailnotfound
                   })}
                 />
-                <label htmlFor="email">Email</label>
                 <span className="red-text">
                   {errors.Email}
                   {errors.emailnotfound}
                 </span>
               </div>
               <div className="input-field col s12">
-                <input
+                <Label htmlFor="Password">Password</Label>
+                <Input
                   onChange={this.onChange}
                   value={Password}
                   error={errors.Password}
@@ -87,25 +93,26 @@ return (
                     invalid: errors.Password || errors.passwordincorrect
                   })}
                 />
-                <label htmlFor="Password">Password</label>
                 <span className="red-text">
                   {errors.Password}
                   {errors.passwordincorrect}
                 </span>
               </div>
               <div className="col s12" style={{ paddingLeft: "11.250px" }}>
-                <Button className="GSColor"
+                <Button 
                   style={{
                     width: "150px",
                     borderRadius: "3px",
                     letterSpacing: "1.5px",
-                    marginTop: "1rem"
+                    marginTop: "2rem",
+                    backgroundColor:"#e85a4f",
                   }}
                   type="submit">Login
                 </Button>
               </div>
-            </form>
-            </Container>
+              </FormGroup>
+            </Form>
+      </Container>
     );
   }
 }

@@ -63,6 +63,7 @@ return (
               </h4> */}
             </div>
             <Form noValidate onSubmit={this.onSubmit}>
+              <FormGroup>
               <div className="input-field col s12">
                 <Label htmlFor="email">Email</Label>
                 <Input
@@ -109,6 +110,7 @@ return (
                   type="submit">Login
                 </Button>
               </div>
+              </FormGroup>
             </Form>
       </Container>
     );

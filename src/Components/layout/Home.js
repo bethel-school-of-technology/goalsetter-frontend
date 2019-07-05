@@ -7,13 +7,9 @@ class Home extends Component {
       <div className="Header">
        <a href="/goals"><h1 className="white" >GOALSetter</h1></a>
        <div className="SmallFont">
-         {/* if (localStorage.getItem('jwtToken')){
-          <Link className="Republican" to="/signout">Sign Out</Link>
-         } else { */}
-          <Link className="Republican" to="/signup">Sign Up</Link>
-         {/* } */}
-         
+         <Link className="Republican" to="/signup">Sign Up</Link>
          <Link className="Green" to="/login">Login</Link>
+         <Link className="Libertarian" to="/goals">Goals</Link>
          <Link className="Democrate" to="/Account">Account</Link>
          </div>
       </div>

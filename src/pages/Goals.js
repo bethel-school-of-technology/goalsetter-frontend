@@ -127,7 +127,18 @@ class Goals extends Component {
          />
        </FormGroup>
      </Col>
-     <Button component={Link} to="/goals">Submit</Button>
+     <Button
+        style={{
+          width: "150px",
+          borderRadius: "3px",
+          letterSpacing: "1.5px",
+          marginTop: "2rem",
+          backgroundColor:"#e85a4f",
+        }}
+        type="submit"
+        component={Link} to="/goals"
+      >Create Goal!
+     </Button>
    </Form>
 
 

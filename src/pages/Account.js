@@ -34,7 +34,8 @@ return (
                 width: "150px",
                 borderRadius: "3px",
                 letterSpacing: "1.5px",
-                marginTop: "1rem"
+                marginTop: "1rem",
+                backgroundColor:"#e85a4f",
               }}onClick={this.onLogoutClick}>Logout
             </Button>
             <Button
@@ -42,7 +43,8 @@ return (
                 width: "150px",
                 borderRadius: "3px",
                 letterSpacing: "1.5px",
-                marginTop: "1rem"
+                marginTop: "1rem",
+                backgroundColor:"#e85a4f",
               }}onClick={this.onSubmit}>Delete
             </Button>
           </div>

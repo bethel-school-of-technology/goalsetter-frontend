@@ -1,3 +1,7 @@
+html {
+  height: 100%;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -7,7 +11,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
+/* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
@@ -19,61 +23,58 @@ a {
 a:hover {
   color: #d8d8d8 !important;
   text-decoration: none !important;
-}
+} */
 
-/* @import url('https://fonts.googleapis.com/css?family=Didot:300,500,700'); */
-
-* {
+/* * {
   box-sizing: border-box;
   font-family: "Didot", sans-serif;
-}
+} */
 
-.body {
-  /* margin: 0;
-  padding: 0; */
-  width: 100%;
+/* .body { */
+  /* /* margin: 0; always hidden */
+  /* padding: 0; always hidden
+  /* width: 100%;
   height: 100%;
   margin-left: auto !important;
   margin-right: auto !important;
   padding: 0px !important;
   overflow: auto;
-} 
+}  */
 
-.container {
+
+
+/* .container {  hide line temp */
   /* width: 100% !important;
   margin-left: 0px !important;
   margin-right: 0px;
   padding: 0px !important;
   padding: 25px 40px;
   overflow: auto; */
-  width: 100%;
+ 
+
+
+
+  /* hide temp */
+  /* width: 100%;
   height: 100%;
   margin-left: auto !important;
   margin-right: auto !important;
   padding: 0px !important;
-}
+} */
 
-.form {
+/* .form {
   width: 100%;
   height: 100%;
   margin-left: auto !important;
   margin-right: auto !important;
   padding: 0px !important;
   overflow: auto;
-}
-
-/* .mr-20 {
-  margin-right: 20px !important;
-} */
-
-/* html, body {
-  
 } */
 
 
-.Login {
+/* .Login {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
+} */
 

@@ -56,15 +56,11 @@ render() {
     const { errors, Email, Password } = this.state;
 return (
       <Container className="Login">
-        <h2>Login</h2>
-            <div className="col s12" style={{ paddingLeft: "11.250px" }}>
-              {/* <h4>
-                <b>Login</b> below
-              </h4> */}
-            </div>
+        <h2 className="login-header">Login</h2>
             <Form noValidate onSubmit={this.onSubmit}>
-              <FormGroup>
-              <div className="input-field col s12">
+              <FormGroup className="login-form-group">
+              <h2>Login</h2>
+              <div className="login-form" style={{ paddingLeft: "11.250px" }}>
                 <Label htmlFor="email">Email</Label>
                 <Input
                   onChange={this.onChange}
@@ -81,7 +77,7 @@ return (
                   {errors.emailnotfound}
                 </span>
               </div>
-              <div className="input-field col s12">
+              <div className="login-form" style={{ paddingLeft: "11.250px" }}>
                 <Label htmlFor="Password">Password</Label>
                 <Input
                   onChange={this.onChange}
@@ -98,7 +94,7 @@ return (
                   {errors.passwordincorrect}
                 </span>
               </div>
-              <div className="col s12" style={{ paddingLeft: "11.250px" }}>
+              <div className="login-button">
                 <Button 
                   style={{
                     width: "150px",

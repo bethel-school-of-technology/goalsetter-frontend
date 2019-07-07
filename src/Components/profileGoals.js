@@ -53,14 +53,14 @@ class ProfileGoals extends React.Component {
 
     const goals = this.state.goalData.map(goal => (
       // const goalDate = new Date(goal.DateFinished);
-      <div
+      <div 
         key={goal.Goal}>
-        <Link to={`/goals/${goal.GoalId}`}> <li className="Flower">{goal.Goal} : {goal.DateFinished}</li></Link>
+        <Link to={`/goals/${goal.GoalId}`}> <li className="Goals">{goal.Goal} : {goal.DateFinished}</li></Link>
       </div>
 
 
     ));
-    return <div>{goals}</div>;
+    return <div className="profile-goals-display">{goals}</div>;
 
   }
 }

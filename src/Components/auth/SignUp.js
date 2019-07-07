@@ -59,12 +59,11 @@ render() {
     
 return (
       <Container className="Home">
-        <h2>Sign Up</h2>
-        <div className="col s12" style={{ paddingLeft: "11.250px" }}>
-        </div>
+        <h2 className="signup-header">Sign Up</h2>
         <Form noValidate onSubmit={this.onSubmit}>
-          <FormGroup>
-            <div className="input-field col s12">
+          <FormGroup className="signup-form-group" style={{ paddingLeft: "11.250px" }}>
+            <h2>Sign Up</h2>
+            <div className="signup-form" style={{ paddingLeft: "11.250px" }}>
               <Label htmlFor="FirstName">First Name</Label>
               <Input
                 onChange={this.onChange}
@@ -78,7 +77,7 @@ return (
               /> 
               <span className="red-text">{errors.FirstName}</span>        
               </div>
-            <div className="input-field col s12">
+            <div className="signup-form" style={{ paddingLeft: "11.250px" }}>
               <Label htmlFor="LastName">Last Name</Label>
               <Input
                 onChange={this.onChange}
@@ -92,7 +91,7 @@ return (
               />
               <span className="red-text">{errors.LastName}</span>
             </div>
-            <div className="input-field col s12">
+            <div className="signup-form" style={{ paddingLeft: "11.250px" }}>
               <Label htmlFor="Email">Email</Label>
               <Input
                 onChange={this.onChange}
@@ -106,7 +105,7 @@ return (
               />
               <span className="red-text">{errors.Email}</span>
             </div>
-            <div className="input-field col s12">
+            <div className="signup-form" style={{ paddingLeft: "11.250px" }}>
               <Label htmlFor="Password">Password</Label>
               <Input
                 onChange={this.onChange}
@@ -120,7 +119,7 @@ return (
               />
               <span className="red-text">{errors.Password}</span>
             </div>
-            <div className="col s12" style={{ paddingLeft: "11.250px" }}>
+            <div className="signup-button">
               <Button
                 style={{
                   width: "150px",
@@ -145,12 +144,11 @@ SignUp.propTypes = {
   auth: PropTypes.object.isRequired,
   errors: PropTypes.object.isRequired
 };
+
 const mapStateToProps = state => ({
   auth: state.auth,
   errors: state.errors
 });
-
-
 
 export default connect(
   mapStateToProps,

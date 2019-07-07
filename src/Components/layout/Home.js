@@ -1,50 +1,42 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
+import Toolbar from '../Toolbar/Toolbar';
+import SideDrawer from '../SideDrawer/SideDrawer';
+import Backdrop from '../Backdrop/Backdrop';
+
 class Home extends Component {
+  state = {
+    sideDrawerOpen: false
+  };
+
+  drawerToggleClickHandler = () => {
+    this.setState((prevState) => {
+    return {sideDrawerOpen: !prevState.sideDrawerOpen};
+    });
+  };
+
+  backdropClickHandler = () => {
+    this.setState({sideDrawerOpen: false});
+  };
+
   render() {
+    let backdrop;
+
+    if (this.state.sideDrawerOpen) {
+      backdrop = <Backdrop click={this.backdropClickHandler} />;
+    }
+
     return (
-      <div className="Header">
-       <a href="/goals"><h1 className="white" >GOALSetter</h1></a>
-       <div className="SmallFont">
-         <Link className="Republican" to="/signup">Sign Up</Link>
-         <Link className="Green" to="/login">Login</Link>
-         <Link className="Libertarian" to="/goals">Goals</Link>
-         <Link className="Democrate" to="/Account">Account</Link>
-         </div>
+      <div style={{height: '100%'}}>
+        <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
+        <SideDrawer show={this.state.sideDrawerOpen} />
+        {backdrop}
+        {/* <Link className="Republican" to="/signup">Sign Up</Link>
+        <Link className="Green" to="/login">Login</Link>
+        <Link className="Libertarian" to="/goals">Goals</Link>
+        <Link className="Democrate" to="/Account">Account</Link> */}
       </div>
-      // <div style={{ height: "0vh" }} className="container valign-wrapper">
-      //   <div className="row">
-      //     <div className="col s12 center-align">
-      //       <div className="col s6">
-              // <Link
-              //   to="/signup"
-              //   style={{
-              //     width: "140px",
-              //     borderRadius: "3px",
-              //     letterSpacing: "1.5px"
-              //   }}
-              //   className="btn btn-large waves-effect waves-light hoverable blue accent-3"
-              // >
-      //           SignUp
-      //         </Link>
-      //       </div>
-      //       <div className="col s6">
-      //         <Link
-      //           to="/login"
-      //           style={{
-      //             width: "140px",
-      //             borderRadius: "3px",
-      //             letterSpacing: "1.5px"
-      //           }}
-      //           className="btn btn-large btn-flat waves-effect white black-text"
-      //         >
-      //           Log In
-      //         </Link>
-      //       </div>
-      //     </div>
-      //   </div>
-      // </div>
     );
   }
 }

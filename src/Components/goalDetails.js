@@ -59,7 +59,7 @@ class GoalDetails extends React.Component {
     const goals = this.state.goalData.map(goal => (
       // const goalDate = new Date(goal.DateFinished);
     <div key={goal.Goal}> 
-        <a href="/specificGoal"><li className="Flower">{goal.Goal} : { goal.DateFinished }</li>  </a>
+        <a href="/specificGoal"><li className="Goals">{goal.Goal} : { goal.DateFinished }</li>  </a>
     </div>
       
 

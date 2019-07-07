@@ -11,6 +11,8 @@ import {
   Button,
 } from 'reactstrap';
 
+// import Home from '../Components/layout/Home';
+
 class SpecificGoal extends Component {
   constructor() {
     super();
@@ -79,6 +81,7 @@ class SpecificGoal extends Component {
       <div>
         <h1>UPDATE YOUR GOAL! </h1>
       <div>
+        {/* <Home /> */}
         <Form noValidate onSubmit={this.onSubmit}>
           <Input type="hidden" name="userId" value={this.props.auth.user.id} />
           <Col className="topMargin">
@@ -124,14 +127,14 @@ class SpecificGoal extends Component {
         </Form>
       </div>
       <div>
-             <Button
-              style={{
-                width: "150px",
-                borderRadius: "3px",
-                letterSpacing: "1.5px",
-                marginTop: "1rem"
-              }}onClick={this.onSubmitDelete}>Delete This Goal
-            </Button>
+        <Button
+        style={{
+          width: "150px",
+          borderRadius: "3px",
+          letterSpacing: "1.5px",
+          marginTop: "1rem"
+        }}onClick={this.onSubmitDelete}>Delete This Goal
+      </Button>
       </div>
       </div>
       

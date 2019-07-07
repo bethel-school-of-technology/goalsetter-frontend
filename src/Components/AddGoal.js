@@ -1,14 +1,12 @@
 import React from 'react';
 
-const AddGoal = ({ title }) => (
-    <div>
-        <h1> <a href="/goals/create" className="AddGoal">+ Add A Goal</a></h1>
-      
-      
-      <h1>{title}</h1>
-    </div>
-  );
+const AddGoal = () => (
+  <div>
+    <spacer className="add-goal-spacer">Space</spacer>
+    <ul>
+      <a href="/goals/create" className="AddGoal">+ Add A Goal</a>
+    </ul>
+  </div>
+);
 
 export default AddGoal;
-
-// recomitting so Dana can recover files

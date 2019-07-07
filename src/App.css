@@ -1,34 +1,23 @@
-.Header {
-  top: 0;
-  right: 0;
-  background-color: #e85a4f;
-  min-height: 15vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  /* justify-content: center; */
-  font-size: calc(22px + 2vmin);
-  color: white;
-  margin-bottom: 30px;
+.signup-form-group {
+  margin-top: 110px;
 }
 
-/* .Header1 {
-  background-color: #e85a4f;
-  min-height: 15vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(22px + 2vmin);
+.signup-header {
   color: white;
-} */
+}
+
+.login-header {
+  color: white;
+}
+
+.login-form-group {
+  margin-top: 110px;
+}
 
 .AddGoal {
   background-color: #ffffff;
-  min-height: 35vh;
- width: 100%;
+  height: 30vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: left;
@@ -36,17 +25,16 @@
   font-size: calc(40px + 2vmin);
   color: #e85a4f;
   margin-left: 20px;
+  margin-top: 110px;
+}
+
+.account-welcome {
+  margin-top: 110px;
 }
 
 
-
-/* .App-link {
-  color: #666666;
-} */
-
-
-.Flower {
-  background-color: #282c34;
+.Goals {
+  background-color: #d8c3a5;
   margin-bottom: 2px;
   margin-right: 10px;
   margin-left: 10px;
@@ -64,34 +52,40 @@
   margin: 100px;
 }
 
-li { background: #eae7dc; }
-li:nth-child(odd) { background:#d8c3a5; }
+/* .profile-goals-display { background: #eadcdc; } */
+/* .profile-goals-display {
+  background: #d8c3a5;
+} */
+
+
 
 .white {
   color: white;
 }
 
-.white:hover {
+/* .white:hover {
   color:#d8c3a5;
-}
+} */
 
+.add-goal-spacer {
+  padding-top: 112px;
+}
 
 .topMargin {
   padding-top: 20px;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
   background-color: #eae7dc;
 }
 
 .topMargin_bottom {
-  padding-top: 20px;
-  padding-bottom: 40px;
+  padding-top: 5px;
+  padding-bottom: 20px;
   background-color: #eae7dc;
 }
 
 .topMargin_white {
-  padding-top: 30px;
+  padding-top: 20px;
   background-color: #ffffff;
-  
 }
 
 .centerStage {
@@ -102,64 +96,6 @@ li:nth-child(odd) { background:#d8c3a5; }
   color: #e85a4f;
 }
 
-.demo-non-form {
-  color: initial;
-  width: 100%;
-  padding: 10px;
-  margin: 6px 0 12px 0;
-  border: 1px solid #ccc;
-  border-radius: 0;
-  font-family: arial, verdana, sans-serif;
-  font-size: 14px;
-  box-sizing: border-box;
-  -webkit-appearance: none;
-}
-
-
-/* .external-container button.external-button {
-  font-weight: 400;
-  padding: 10px;
-  margin: 6px 0 13px 0;
-  width: 100%;
-} */
-
 .SmallFont {
   font-size: 18px;
-}
-
-.Republican {
-  margin-right: 12px;
-  color: white;
-}
-
-.Democrate {
-  margin-left: 12px;
-  color: white;
-}
-
-.Green {
-  margin-left: 12px;
-  margin-right: 12px;
-  color: white;
-}
-
-.Libertarian {
-  margin-left: 12px;
-  margin-right: 12px;
-  color: white;
-}
-
-@media (max-width: 768px) {
-  .Libertarian {
-    display: none;
-  }
-  .Green {
-      display: none;
-  }
-  .Democrate {
-    display: none;
-  }
-  .Republican {
-    display: none;
-  }
 }

@@ -6,6 +6,7 @@ import AddGoal from "../AddGoal";
 import ProfileGoals from "../profileGoals";
 import axios from 'axios';
 
+import Home from '../layout/Home';
 
 class Profile extends Component {
 //   constructor() {
@@ -35,16 +36,15 @@ render() {
     console.log('PROPS:', this.props);
     const { user } = this.props.auth;
     // const uriString = "http://localhost:3001/goals/"+this.props.auth.user.id;
-return (
+  return (
     <div>
       <div className="App">
-       <AddGoal />
+        <Home />
+        <AddGoal />
        {/* <ProfileGoals uri={uriString} /> */}
-       <ProfileGoals />
+        <ProfileGoals />
+      </div>
     </div>
-    </div>
-
-    
   )
   }
 }
@@ -54,10 +54,12 @@ Profile.propTypes = {
   auth: PropTypes.object.isRequired,
   errors: PropTypes.object.isRequired
 };
+
 const mapStateToProps = state => ({
   auth: state.auth,
   errors: state.errors
 });
+
 export default connect(
   mapStateToProps,
   { loginUser }

@@ -30,7 +30,7 @@ class Users extends React.Component {
     }
     const users = this.state.userData.map(user => (
       <div key={user.FirstName}>
-        <li className="Flower">{user.FirstName}</li>: <em>{user.Email}</em>
+        <li className="Goals">{user.FirstName}</li>: <em>{user.Email}</em>
       </div>
     ));
     return <div>{users}</div>;

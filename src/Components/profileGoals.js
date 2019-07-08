@@ -27,7 +27,13 @@ class ProfileGoals extends React.Component {
   // }
 
   fetchGoalData = () => {
-    axios.get(`http://localhost:3001/goals`).then(response => {
+    const jwToken = localStorage.getItem('jwtToken');
+
+    axios({
+      method: 'get', 
+      baseURL: `http://localhost:3001/goals`,
+      headers: { 'Authorization': jwToken }
+    }).then(response => {
       this.setState(() => {
         return {
           goalData: response.data

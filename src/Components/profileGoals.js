@@ -1,36 +1,18 @@
 import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import moment from 'moment';
 
 class ProfileGoals extends React.Component {
   state = {
     goalData: []
   };
-  // fetchGoalData = () => {
-  //   var encodedURI = window.encodeURI(this.props.uri);
-  //   return axios.get(encodedURI).then(response => {
-  //     this.setState(() => {
-  //       return {
-  //         goalData: response.data
-  //       };
-  //     });
-  //     this.state.goalData.forEach(gd => {
-  //       const gDate = new Date(gd.DateFinished);
-  //       gd.DateFinished = new Intl.DateTimeFormat('en-US').format(gDate); // 6/4/2019
-  //     });
-  //   });
-  // };
-
-  // componentDidMount() {
-  //   this.fetchGoalData();
-  //   console.log("PROPS:", this.props)
-  // }
 
   fetchGoalData = () => {
     const jwToken = localStorage.getItem('jwtToken');
 
     axios({
-      method: 'get', 
+      method: 'get',
       baseURL: `http://localhost:3001/goals`,
       headers: { 'Authorization': jwToken }
     }).then(response => {
@@ -39,16 +21,14 @@ class ProfileGoals extends React.Component {
           goalData: response.data
         };
       });
-      this.state.goalData.forEach(gd => {
-        const gDate = new Date(gd.DateFinished);
-        gd.DateFinished = new Intl.DateTimeFormat('en-US').format(gDate); // 6/4/2019
-      });
+
+      console.log("state after initilization...", this.state);
     });
   };
 
   componentDidMount() {
     this.fetchGoalData();
-    console.log("PROPS:", this.props)
+
   }
 
 
@@ -58,10 +38,14 @@ class ProfileGoals extends React.Component {
     }
 
     const goals = this.state.goalData.map(goal => (
-      // const goalDate = new Date(goal.DateFinished);
-      <div 
+      
+      <div
         key={goal.Goal}>
-        <Link to={`/goals/${goal.GoalId}`}> <li className="Goals">{goal.Goal} : {goal.DateFinished}</li></Link>
+        <Link to={`/goals/${goal.GoalId}`}>
+          <li className="Goals">
+            {goal.Goal} : { moment(goal.DateFinished).format('LL') }
+          </li>
+        </Link>
       </div>
 
 

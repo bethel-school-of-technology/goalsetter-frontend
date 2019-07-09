@@ -2,9 +2,10 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { updateGoal } from "../actions/authActions";
-import GoalDetails from "../Components/goalDetails";
 import { Link } from "react-router-dom";
 import axios from 'axios';
+import moment from 'moment';
+
 import {
   Col, Form,
   FormGroup, Label, Input,
@@ -14,59 +15,46 @@ import {
 // import Home from '../Components/layout/Home';
 
 class SpecificGoal extends Component {
-  constructor() {
-    super();
-    this.state = {
-      userId: "",
-      FirstName: "",
-      LastName: "",
-      Email: "",
-      Password: "",
+  state = {
+    specificGoalData: []
+  };
+  
+  componentDidMount() {
+    const jwToken = localStorage.getItem('jwtToken');
 
-    };
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.auth.isAuthenticated) {
-      this.props.history.push("/profile"); // push user to dashboard when they login
-    }
-    if (nextProps.errors) {
-      this.setState({
-        errors: nextProps.errors
+    axios({
+      method: 'get',
+      baseURL: `http://localhost:3001/goals`,
+      headers: { 'Authorization': jwToken }
+    }).then(response => {
+      this.setState(() => {
+        return {
+          specificGoalData: response.data
+        };
       });
-    }
-  }
 
-  setCurrentUser(nextProps) {
-    if (nextProps.auth.isAuthenticated) {
-      this.props.history.push("/profile/"); // push user to profile when they login
-    }
-    if (nextProps.errors) {
-      this.setState({
-        errors: nextProps.errors
-      });
-    }
-  }
+      console.log("+++DID MOUNT+++", this.state);
+    });
+  };
 
+  
   onSubmit = e => {
     e.preventDefault();
     const updateGoalDetails = {
-      // GoalId: this.state.GoalId,
+      GoalId: this.state.GoalId,
       Goal: this.state.Goal,
       DateFinished: this.state.DateFinished,
       Notes: this.state.Notes,
       userId: this.props.auth.user.id,
     };
-    // console.log("NEW GOAL", newGoal);
-
     this.props.updateGoal(updateGoalDetails, this.props.history);
   };
 
   onSubmitDelete = (e) =>  {
     console.log("CALLING DELETE FUNCTION")
-    axios.delete(`http://localhost:3001/goals/:id}`) //Not Functioning Because We don't know how to access GoalId
+    axios.delete(`http://localhost:3001/goals/${specificGoalData.GoalId}}`) //Not Functioning Because We don't know how to access GoalId
     e.preventDefault();
-    this.props.history.push("/profile/");
+    this.props.history.push("/goals/");
   };
 
   onChange = e => {
@@ -75,13 +63,14 @@ class SpecificGoal extends Component {
 
 
   render() {
-    console.log("PROPS:", this.props);
+    console.log('=====+=PROPS=+===:', this.state);
     const { Goal, DateFinished, Notes } = this.state;
     return (
       <div>
         <h1>UPDATE YOUR GOAL! </h1>
+        <h2>{this.props.Goal}</h2>
       <div>
-        {/* <Home /> */}
+      
         <Form noValidate onSubmit={this.onSubmit}>
           <Input type="hidden" name="userId" value={this.props.auth.user.id} />
           <Col className="topMargin">
@@ -123,7 +112,7 @@ class SpecificGoal extends Component {
               />
             </FormGroup>
           </Col>
-          <Button component={Link} to="/Users">Update Goal Details</Button>
+          {/* <Button component={Link} to="/Users">Update Goal Details</Button> */}
         </Form>
       </div>
       <div>
@@ -135,6 +124,7 @@ class SpecificGoal extends Component {
           marginTop: "1rem"
         }}onClick={this.onSubmitDelete}>Delete This Goal
       </Button>
+      <h2>{this.props.Goal}</h2>
       </div>
       </div>
       

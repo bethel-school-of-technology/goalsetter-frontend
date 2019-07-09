@@ -63,7 +63,7 @@ class Goals extends Component {
     };
   
   render () {
-    console.log("PROPS:", this.props);
+    
     const { Goal, DateFinished, Notes } = this.state;
   return (
     <div>

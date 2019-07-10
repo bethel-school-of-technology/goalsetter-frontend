@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
-
 import Toolbar from '../Toolbar/Toolbar';
 import SideDrawer from '../SideDrawer/SideDrawer';
 import Backdrop from '../Backdrop/Backdrop';
@@ -12,12 +10,12 @@ class Home extends Component {
 
   drawerToggleClickHandler = () => {
     this.setState((prevState) => {
-    return {sideDrawerOpen: !prevState.sideDrawerOpen};
+      return { sideDrawerOpen: !prevState.sideDrawerOpen };
     });
   };
 
   backdropClickHandler = () => {
-    this.setState({sideDrawerOpen: false});
+    this.setState({ sideDrawerOpen: false });
   };
 
   render() {
@@ -28,7 +26,7 @@ class Home extends Component {
     }
 
     return (
-      <div style={{height: '100%'}}>
+      <div style={{ height: '100%' }}>
         <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
         <SideDrawer show={this.state.sideDrawerOpen} />
         {backdrop}

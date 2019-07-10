@@ -41,14 +41,43 @@ class SignUp extends Component {
     this.setState({ [e.target.id]: e.target.value });
   };
 
-  onSubmit = e => {
+  onSubmit = (e) => {
     e.preventDefault();
+
+   const {FirstName, LastName, Email, Password } = this.state;
+
+    //Check for Errors
+    if (Password=== '') {
+      this.setState({ errors: { Password: 'Password is required'} 
+    });
+    return;
+    }
+
+    if (FirstName=== '') {
+      this.setState({ errors: { FirstName: 'First Name is required'} 
+    });
+    return;
+    }
+
+    if (LastName=== '') {
+      this.setState({ errors: { LastName: 'Last Name is required'} 
+    });
+    return;
+    }
+
+    if (Email=== '') {
+      this.setState({ errors: { Email: 'Email is required'} 
+    });
+    return;
+    }
+  
     const newUser = {
-      FirstName: this.state.FirstName,
-      LastName: this.state.LastName,
-      Email: this.state.Email,
-      Password: this.state.Password,
-    };
+          FirstName: this.state.FirstName,
+           LastName: this.state.LastName,
+           Email: this.state.Email,
+           Password: this.state.Password,
+         };
+
     
     // console.log('newUser: ', newUser)
     this.props.signupUser(newUser, this.props.history); 
@@ -128,7 +157,7 @@ return (
                   marginTop: "2rem",
                   backgroundColor:"#e85a4f",
                 }}
-                type="submit"
+                type="submit" 
               >Sign up
               </Button>
             </div>

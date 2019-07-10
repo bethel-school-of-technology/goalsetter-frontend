@@ -90,7 +90,7 @@ export const createGoal = (newGoal, history) => dispatch => {
     );
 };
 
-// Create Goal
+// Update Goal
 export const updateGoal = (updateGoalDetails, history) => dispatch => {
   console.log("CALLING CREATE GOAL FUNCTION!");
   axios

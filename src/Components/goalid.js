@@ -10,7 +10,7 @@ import {
   Button,
 } from 'reactstrap';
 
-class SpecificGoal extends Component {
+class GoalID extends Component {
   state = {
     specificGoal: ""
   }
@@ -36,23 +36,43 @@ class SpecificGoal extends Component {
   //THIS IS THE UPDATE GOAL FUNCTION//
   onSubmitUpdate = (e) => {
     axios.put(`http://localhost:3001/goals/${this.props.match.params.GoalId}`, this.state) 
-
+    // updateGoalDetails = {
+    //       GoalId: this.props.match.params.GoalId,
+    //       Goal: this.state.specificGoal.Goal,
+    //       DateFinished: this.state.specificGoal.DateFinished,
+    //       Notes: this.state.specificGoal.Notes,
+    //       userId: this.props.auth.user.id,
+    //     };
     e.preventDefault();
-    this.props.history.push("/goals");
+    this.props.history.push(`http://localhost:3001/goals/${this.props.match.params.GoalId}`);
   };
-  
+  // onSubmit = (e, updateGoalDetails) => {
+  //   axios({
+  //     method: 'put',
+  //     baseURL: `http://localhost:3001/goals/${this.props.match.params.GoalId}`,
+      
+  //   })
+  //   e.preventDefault();
+  //   updateGoalDetails = {
+  //     GoalId: this.state.GoalId,
+  //     Goal: this.state.Goal,
+  //     DateFinished: this.state.DateFinished,
+  //     Notes: this.state.Notes,
+  //     userId: this.props.auth.user.id,
+  //   };
+  //   this.props.onSubmit(updateGoalDetails);
+  // };
 
   //THIS IS THE DELETE GOAL FUNCTION//
   onSubmitDelete = (e) => {
     console.log("CALLING DELETE FUNCTION")
-    axios.delete(`http://localhost:3001/goals/${this.props.match.params.GoalId}`)
-    // .then(res => {
-    //   console.log("RESPONSE", res);
-    // }).catch(err => {
-    //   console.log(err);
-    // }) 
+    axios.delete(`http://localhost:3001/goals/${this.props.match.params.GoalId}`).then(res => {
+      console.log("RESPONSE", res);
+    }).catch(err => {
+      console.log(err);
+    }) 
     e.preventDefault();
-    this.props.history.push("/goals");
+    this.props.history.push("/goals/");
   };
 
   onChange = e => {
@@ -146,7 +166,7 @@ class SpecificGoal extends Component {
   }
 }
 
-SpecificGoal.propTypes = {
+GoalID.propTypes = {
   updateGoal: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
   errors: PropTypes.object.isRequired
@@ -158,4 +178,4 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   { updateGoal }
-)(SpecificGoal);
+)(GoalID);

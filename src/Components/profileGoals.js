@@ -34,7 +34,7 @@ class ProfileGoals extends React.Component {
 
   render() {
     if (this.state.goalData.length === 0) {
-      return <div>Failed to fetch data from server</div>;
+      return <div>You haven't made any goals yet! Let's change that. Click the <b>+ADD GOAL</b> button above to create your first goal! </div>;
     }
 
     const goals = this.state.goalData.map(goal => (

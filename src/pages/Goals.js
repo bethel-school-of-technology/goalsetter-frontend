@@ -54,7 +54,6 @@ class Goals extends Component {
       Notes: this.state.Notes,
       userId: this.props.auth.user.id,
     };
-    // console.log("NEW GOAL", newGoal);
 
     this.props.createGoal(newGoal, this.props.history);
   };

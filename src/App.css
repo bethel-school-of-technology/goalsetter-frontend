@@ -32,7 +32,6 @@
   margin-top: 110px;
 }
 
-
 .Goals {
   background-color: #d8c3a5;
   margin-bottom: 2px;
@@ -52,23 +51,16 @@
   margin: 100px;
 }
 
-/* .profile-goals-display { background: #eadcdc; } */
-/* .profile-goals-display {
-  background: #d8c3a5;
-} */
-
-
-
 .white {
   color: white;
 }
 
-/* .white:hover {
-  color:#d8c3a5;
-} */
-
 .add-goal-spacer {
   padding-top: 112px;
+}
+
+.add-specific-goal-spacer {
+  padding-top: 56px;
 }
 
 .topMargin {

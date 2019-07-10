@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { signupUser } from '../../actions/authActions';
 import classnames from 'classnames';
-import { 
-  Container, Col, Form,
+import {
+  Container, Form,
   FormGroup, Label, Input,
-  Button, 
+  Button,
 } from 'reactstrap';
 
 class SignUp extends Component {
@@ -31,7 +31,7 @@ class SignUp extends Component {
   }
 
   componentDidMount() {
-    // If logged in and user navigates to Register page, should redirect them to dashboard
+    // If logged in and user navigates to SignUp page, should redirect them to profile
     if (this.props.auth.isAuthenticated) {
       this.props.history.push("/profile");
     }
@@ -44,49 +44,53 @@ class SignUp extends Component {
   onSubmit = (e) => {
     e.preventDefault();
 
-   const {FirstName, LastName, Email, Password } = this.state;
+    const { FirstName, LastName, Email, Password } = this.state;
 
     //Check for Errors
-    if (Password=== '') {
-      this.setState({ errors: { Password: 'Password is required'} 
-    });
-    return;
+    if (Password === '') {
+      this.setState({
+        errors: { Password: 'Password is required' }
+      });
+      return;
     }
 
-    if (FirstName=== '') {
-      this.setState({ errors: { FirstName: 'First Name is required'} 
-    });
-    return;
+    if (FirstName === '') {
+      this.setState({
+        errors: { FirstName: 'First Name is required' }
+      });
+      return;
     }
 
-    if (LastName=== '') {
-      this.setState({ errors: { LastName: 'Last Name is required'} 
-    });
-    return;
+    if (LastName === '') {
+      this.setState({
+        errors: { LastName: 'Last Name is required' }
+      });
+      return;
     }
 
-    if (Email=== '') {
-      this.setState({ errors: { Email: 'Email is required'} 
-    });
-    return;
+    if (Email === '') {
+      this.setState({
+        errors: { Email: 'Email is required' }
+      });
+      return;
     }
-  
+
     const newUser = {
-          FirstName: this.state.FirstName,
-           LastName: this.state.LastName,
-           Email: this.state.Email,
-           Password: this.state.Password,
-         };
+      FirstName: this.state.FirstName,
+      LastName: this.state.LastName,
+      Email: this.state.Email,
+      Password: this.state.Password,
+    };
 
-    
+
     // console.log('newUser: ', newUser)
-    this.props.signupUser(newUser, this.props.history); 
+    this.props.signupUser(newUser, this.props.history);
   };
 
-render() {
+  render() {
     const { errors, FirstName, LastName, Email, Password } = this.state;
-    
-return (
+
+    return (
       <Container className="Home">
         <h2 className="signup-header">Sign Up</h2>
         <Form noValidate onSubmit={this.onSubmit}>
@@ -101,11 +105,11 @@ return (
                 id="FirstName"
                 type="text"
                 className={classnames("", {
-                  invalid:errors.FirstName
+                  invalid: errors.FirstName
                 })}
-              /> 
-              <span className="red-text">{errors.FirstName}</span>        
-              </div>
+              />
+              <span className="red-text">{errors.FirstName}</span>
+            </div>
             <div className="signup-form" style={{ paddingLeft: "11.250px" }}>
               <Label htmlFor="LastName">Last Name</Label>
               <Input
@@ -155,9 +159,9 @@ return (
                   borderRadius: "3px",
                   letterSpacing: "1.5px",
                   marginTop: "2rem",
-                  backgroundColor:"#e85a4f",
+                  backgroundColor: "#e85a4f",
                 }}
-                type="submit" 
+                type="submit"
               >Sign up
               </Button>
             </div>

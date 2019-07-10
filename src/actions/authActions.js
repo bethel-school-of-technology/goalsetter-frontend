@@ -17,7 +17,7 @@ export const signupUser = (userData, history) => dispatch => {
     .post("http://localhost:3001/users/signup", userData)
     .then(res => history.push("/login")) // re-direct to login on successful signup
     .catch(err =>
-     console.log(err)
+      console.log(err)
     );
 };
 // Login - get user token
@@ -71,7 +71,7 @@ export const deleteUser = (deleteUserInfo) => dispatch => {
   console.log("CALLING DELETE FUNCTION")
   axios
     .delete(`http://localhost:3001/users/:Id`, deleteUserInfo)
-    // Remove token from local storage
+  // Remove token from local storage
   localStorage.removeItem("jwtToken");
   // Remove auth header for future requests
   setAuthToken(false);
@@ -86,7 +86,7 @@ export const createGoal = (newGoal, history) => dispatch => {
     .post("http://localhost:3001/goals", newGoal)
     .then(res => history.push("/goals")) // re-direct to login on successful signup
     .catch(err =>
-     console.log(err)
+      console.log(err)
     );
 };
 
@@ -97,7 +97,7 @@ export const updateGoal = (updateGoalDetails, history) => dispatch => {
     .put("http://localhost:3001/goals", updateGoalDetails)
     .then(res => history.push("/goals")) // re-direct to login on successful signup
     .catch(err =>
-     console.log(err)
+      console.log(err)
     );
 };
 
@@ -142,6 +142,6 @@ export const getSpecificGoal = (specificGoal, history) => dispatch => {
     .get("http://localhost:3001/goals", specificGoal)
     .then(res => history.push("/goals")) // re-direct to login on successful signup
     .catch(err =>
-     console.log(err)
+      console.log(err)
     );
 };

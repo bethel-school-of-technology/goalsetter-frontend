@@ -38,12 +38,12 @@ class ProfileGoals extends React.Component {
     }
 
     const goals = this.state.goalData.map(goal => (
-      
+
       <div
         key={goal.Goal}>
         <Link to={`/goals/${goal.GoalId}`}>
           <li className="Goals">
-            {goal.Goal} : { moment(goal.DateFinished).format('LL') }
+            {goal.Goal} : {moment(goal.DateFinished).format('LL')}
           </li>
         </Link>
       </div>

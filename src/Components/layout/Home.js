@@ -30,10 +30,6 @@ class Home extends Component {
         <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
         <SideDrawer show={this.state.sideDrawerOpen} />
         {backdrop}
-        {/* <Link className="Republican" to="/signup">Sign Up</Link>
-        <Link className="Green" to="/login">Login</Link>
-        <Link className="Libertarian" to="/goals">Goals</Link>
-        <Link className="Democrate" to="/Account">Account</Link> */}
       </div>
     );
   }

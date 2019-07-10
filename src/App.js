@@ -52,8 +52,10 @@ class App extends Component {
               <PrivateRoute exact path="/goals/:GoalId" component={SpecificGoal} />
             </Switch>
           </div>
+
         </Router>
       </Provider>
+
     );
   }
 }

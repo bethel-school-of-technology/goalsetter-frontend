@@ -1,6 +1,7 @@
 import axios from "axios";
 import setAuthToken from "../utils/setAuthToken";
 import jwt_decode from "jwt-decode";
+import process from "process";
 import {
   GET_ERRORS,
   SET_CURRENT_USER,
@@ -14,7 +15,7 @@ import {
 // Register User
 export const signupUser = (userData, history) => dispatch => {
   axios
-    .post("http://localhost:3001/users/signup", userData)
+    .post(process.env.REACT_API_ENDPOINT + "/users/signup", userData)
     .then(res => history.push("/login")) // re-direct to login on successful signup
     .catch(err =>
       console.log(err)
@@ -23,7 +24,7 @@ export const signupUser = (userData, history) => dispatch => {
 // Login - get user token
 export const loginUser = userData => dispatch => {
   axios
-    .post("http://localhost:3001/users/login", userData)
+    .post(process.env.REACT_API_ENDPOINT + "/users/login", userData)
     .then(res => {
       // Save to localStorage
       // Set token to localStorage
@@ -70,7 +71,7 @@ export const logoutUser = () => dispatch => {
 export const deleteUser = (deleteUserInfo) => dispatch => {
   console.log("CALLING DELETE FUNCTION")
   axios
-    .delete(`http://localhost:3001/users/:Id`, deleteUserInfo)
+    .delete(process.env.REACT_API_ENDPOINT + `/users/:Id`, deleteUserInfo)
   // Remove token from local storage
   localStorage.removeItem("jwtToken");
   // Remove auth header for future requests
@@ -83,7 +84,7 @@ export const deleteUser = (deleteUserInfo) => dispatch => {
 export const createGoal = (newGoal, history) => dispatch => {
   console.log("CALLING CREATE GOAL FUNCTION!");
   axios
-    .post("http://localhost:3001/goals", newGoal)
+    .post(process.env.REACT_API_ENDPOINT + "/goals", newGoal)
     .then(res => history.push("/goals")) // re-direct to login on successful signup
     .catch(err =>
       console.log(err)
@@ -94,7 +95,7 @@ export const createGoal = (newGoal, history) => dispatch => {
 export const updateGoal = (updateGoalDetails, history) => dispatch => {
   console.log("CALLING CREATE GOAL FUNCTION!");
   axios
-    .put("http://localhost:3001/goals", updateGoalDetails)
+    .put(process.env.REACT_API_ENDPOINT + "/goals", updateGoalDetails)
     .then(res => history.push("/goals")) // re-direct to login on successful signup
     .catch(err =>
       console.log(err)
@@ -105,7 +106,7 @@ export const updateGoal = (updateGoalDetails, history) => dispatch => {
 // Set Goal Details
 export const setGoalDetails = goalDetails => dispatch => {
   axios
-    .get("http://localhost:3001/goals", goalDetails)
+    .get(process.env.REACT_API_ENDPOINT + "/goals", goalDetails)
     .then(res => {
       // Save to localStorage
       // Set token to localStorage
@@ -139,7 +140,7 @@ export const setCurrentGoal = decoded => {
 export const getSpecificGoal = (specificGoal, history) => dispatch => {
   console.log("getting Specific Goal!");
   axios
-    .get("http://localhost:3001/goals", specificGoal)
+    .get(process.env.REACT_API_ENDPOINT + "/goals", specificGoal)
     .then(res => history.push("/goals")) // re-direct to login on successful signup
     .catch(err =>
       console.log(err)

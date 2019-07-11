@@ -4,14 +4,13 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
-
+import LandingPage from "./pages/LandingPage/LandingPage";
 import { Provider } from "react-redux";
 import store from "./store";
 import Goals from './pages/Goals';
 import Account from './pages/Account';
 import SignUp from './Components/auth/SignUp';
 import Login from './Components/auth/Login';
-import Home from './Components/layout/Home';
 import PrivateRoute from './Components/private-route/PrivateRoute';
 import Profile from './Components/profile/profile';
 import SpecificGoal from './pages/SpecificGoal';
@@ -41,10 +40,9 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <div className="App">
-            <Home />
+            <Route exact path="/LandingPage" component={LandingPage} />
             <Route exact path="/signup" component={SignUp} />
             <Route exact path="/login" component={Login} />
-
             <Switch>
               <PrivateRoute exact path="/goals" component={Profile} />
               <PrivateRoute exact path="/Account" component={Account} />
@@ -52,10 +50,8 @@ class App extends Component {
               <PrivateRoute exact path="/goals/:GoalId" component={SpecificGoal} />
             </Switch>
           </div>
-
         </Router>
       </Provider>
-
     );
   }
 }

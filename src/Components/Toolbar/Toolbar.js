@@ -1,12 +1,7 @@
 import React, { Component } from "react";
-
-
 import DrawerToggleButton from '../SideDrawer/SideDrawerButton';
 import './Toolbar.css';
-
-// temp add links
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
-import SignUp from '../auth/SignUp';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 const toolbar = props => (
     <header className="toolbar">
@@ -31,25 +26,6 @@ const toolbar = props => (
                     <li>
                         <a href="http://localhost:3000/account">Account</a>
                     </li>
-                    {/* <Route exact path="/signup" component={SignUp} />
-                    <Route exact path="/login" component={Login} />
-
-                    <Switch>
-                        <PrivateRoute exact path="/goals" component={Profile} />
-                        <PrivateRoute exact path="/Account" component={Account} />
-                        <PrivateRoute exact path="/goals/create" component={Goals} />
-                        <PrivateRoute exact path="/specificgoal" component={SpecificGoal} />
-                    </Switch> */}
-            
-                    {/* add temp */}
-                    {/* <li><a href="/">link</a></li>
-                   
-                    <li>
-                    <Link className="Republican" to="/signup">Sign Up</Link>
-                    </li> */}
-                    
-                    {/* not working */}
-                    {/* <Route exact path="/signup" component={SignUp}>SignUp</Route> */}
                 </ul>
             </div>
             </Router>

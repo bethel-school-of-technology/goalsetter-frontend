@@ -1,0 +1,33 @@
+.landgingPage-layout {
+    padding-top: 110px;
+}
+
+.landingPage {
+    position: fixed;
+    padding: 30px 0;
+    width: 100%;
+    background: #e85a4f;
+    height: 150px;
+    justify-content: center;
+}
+
+.landingPage_logo {
+    text-align: center;
+}
+
+.landingPage_logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 56px;
+}
+
+.form-landingPage {
+    justify-content: center;
+    align-content: center;
+    display: flex;
+    align-items: center;
+}
+
+/* .landingPage-spacer {
+    flex: 1;
+} */

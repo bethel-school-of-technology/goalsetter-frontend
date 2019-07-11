@@ -1,33 +1,93 @@
-.App {
-  text-align: center;
+.signup-form-group {
+  margin-top: 56px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.signup-header {
+  color: white;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.login-header {
+  color: white;
+}
+
+.login-form-group {
+  margin-top: 56px;
+}
+
+.AddGoal {
+  background-color: #ffffff;
+  height: 30vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  font-size: calc(40px + 2vmin);
+  color: #e85a4f;
+  margin-left: 20px;
+  margin-top: 110px;
+}
+
+.account-welcome {
+  margin-top: 110px;
+}
+
+.Goals {
+  background-color: #d8c3a5;
+  margin-bottom: 2px;
+  margin-right: 10px;
+  margin-left: 10px;
+  min-height: 7vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(5px + 2vmin);
+  color: white !important;
+}
+
+.Pancake {
+  padding-left: 100px;
+  margin: 100px;
+}
+
+.white {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.add-goal-spacer {
+  padding-top: 112px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.add-specific-goal-spacer {
+  padding-top: 56px;
+}
+
+.topMargin {
+  padding-top: 20px;
+  padding-bottom: 5px;
+  background-color: #eae7dc;
+}
+
+.topMargin_bottom {
+  padding-top: 5px;
+  padding-bottom: 20px;
+  background-color: #eae7dc;
+}
+
+.topMargin_white {
+  padding-top: 20px;
+  background-color: #ffffff;
+}
+
+.centerStage {
+  justify-content: center;
+}
+
+.colorRed {
+  color: #e85a4f;
+}
+
+.SmallFont {
+  font-size: 18px;
 }

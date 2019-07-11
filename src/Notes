@@ -1,0 +1,39 @@
+GET /goals list all goals for a specific user. 
+GET /goals/{GoalId} fetchign specific goal 
+
+Edit page: /goals/{GoalId}/edit
+
+PUT /goals/{GoalId}/update 
+
+
+
+
+
+Login: 
+token headers, ?token=
+
+
+
+
+goals/{userid}/{GoalId}
+
+
+
+
+URL
+/goals will show you the list of goals. 
+/goals/create will show you the form to create a new goal. 
+/goals/{id} show page. 
+/goals/{id}/edit edit page. 
+
+
+API, backend 
+GET /goals this will return all goals 
+GET /goals/{id}
+POST /goals create a new goal. 
+PUT /goals/{id}/update updated a specific goal 
+DELETE /goals/{id}
+
+
+RESTful 
+/goals/{id}

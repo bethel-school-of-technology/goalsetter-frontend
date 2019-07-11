@@ -26,7 +26,7 @@ class LandingPage extends Component {
                                     marginTop: "2rem",
                                     marginRight: "6rem",
                                     backgroundColor: "#e85a4f",
-                                    }} onClick href="http://localhost:3000/signup">Sign Up
+                                    }} onClick href="/signup">Sign Up
                                 </Button>
                                 <div className="landingPage-spacer"></div>
                                 <Button
@@ -39,7 +39,7 @@ class LandingPage extends Component {
                                     marginTop: "2rem",
                                     marginLeft: "6rem",
                                     backgroundColor: "#e85a4f",
-                                    }} onClick href="http://localhost:3000/login">Login
+                                    }} onClick href="/login">Login
                                 </Button>
                             </div>
                         </Form>

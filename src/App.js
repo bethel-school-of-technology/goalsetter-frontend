@@ -14,6 +14,7 @@ import Login from './Components/auth/Login';
 import PrivateRoute from './Components/private-route/PrivateRoute';
 import Profile from './Components/profile/profile';
 import SpecificGoal from './pages/SpecificGoal';
+import Home from './Components/layout/Home';
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -40,6 +41,7 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <div className="App">
+            <Home />
             <Route exact path="/LandingPage" component={LandingPage} />
             <Route exact path="/signup" component={SignUp} />
             <Route exact path="/login" component={Login} />
